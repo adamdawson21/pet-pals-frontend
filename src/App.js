@@ -10,6 +10,9 @@ import SignUp from './pages/SignUp/SignUp';
 import Profile from './pages/Profile/Profile';
 import './App.css';
 
+
+
+
 export default function App() {
   return (
     <div className="App">
