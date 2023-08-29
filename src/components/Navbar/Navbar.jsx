@@ -16,10 +16,10 @@ function App() {
         </div>
         <ul className="nav-list">
             <li>
-              <Link to="/dogs">Dogs</Link>
+              <Link to="/alldogs">Dogs</Link>
             </li>
             <li>
-              <Link to="/cats">Cats</Link>
+              <Link to="/allcats">Cats</Link>
             </li>
             <li>
               <Link to="/about">About</Link>
