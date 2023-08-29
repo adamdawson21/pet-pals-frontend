@@ -9,12 +9,12 @@ const About = () => <h2> "About"</h2>;
 
 function App() {
   return (
-      <div className="App">
-        <nav>
-          <ul>
-            <li>
-              <Link to="/">PetPals</Link>
-            </li>
+    <div className="App">
+      <nav className="nav-container">
+      <div className="header">
+        <Link to = "/">PetPals</Link>
+        </div>
+        <ul className="nav-list">
             <li>
               <Link to="/dogs">Dogs</Link>
             </li>
@@ -24,8 +24,10 @@ function App() {
             <li>
               <Link to="/about">About</Link>
             </li>
-        
-          </ul>
+        </ul>
+        <div className="profile-icon">
+          <h4>Profile</h4>
+        </div>
         </nav>
 
         {/* <Routes>
