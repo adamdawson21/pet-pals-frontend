@@ -1,5 +1,6 @@
 import { Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar/Navbar';
+import Footer from './components/Footer/Footer';
 import Home from './pages/Home/Home';
 import About from './pages/About/About';
 import AllCats from './pages/AllCats/AllCats';
@@ -9,10 +10,14 @@ import SignUp from './pages/SignUp/SignUp';
 import Profile from './pages/Profile/Profile';
 import './App.css';
 
+
+
+
 export default function App() {
   return (
     <div className="App">
       <Navbar />
+      <Footer />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
