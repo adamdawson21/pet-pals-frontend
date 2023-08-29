@@ -45,7 +45,6 @@
     ]
   },
   "devDependencies": {
-    "tailwindcss": "^3.3.3",
-    "type": "module"
+    "tailwindcss": "^3.3.3"
   }
 }
