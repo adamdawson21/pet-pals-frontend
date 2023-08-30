@@ -26,8 +26,11 @@ export default function App() {
         <Route path="/signin" element={<SignIn />} />
         <Route path="/signup" element={<SignUp />} />
         <Route path="/profile" element={<Profile />} />
+
         <Route path="/allcats/:id" element={<PetDetail />} />
         <Route path="/alldogs/:id" element={<PetDetail />} />
+        <Route path="allcats/:id" element={<PetDetail />} /> 
+        <Route path="alldogs/:id" element={<PetDetail />} />
       </Routes>
       <Footer />
     </div>
