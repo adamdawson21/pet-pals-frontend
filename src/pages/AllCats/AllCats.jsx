@@ -1,7 +1,34 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react';
+import { fetchCatBreeds } from '../../services/cats';
+import { PetPreview } from '../../components/PetPreview/PetPreview';
+import './AllCats.css';
 
-export default function AllCats() {
+const AllCats = () => {
+  const [catBreeds, setCatBreeds] = useState([]);
+
+  useEffect(() => {
+    fetchCatBreedsData();
+  }, []);
+
+  const fetchCatBreedsData = async () => {
+    try {
+      const fetchedCatBreeds = await fetchCatBreeds();
+      setCatBreeds(fetchedCatBreeds);
+    } catch (error) {
+      console.error('Error fetching dog breeds:', error);
+    }
+  };
+
   return (
-    <div>AllCats</div>
-  )
-}
+    <div>
+      <h1>All Cats</h1>
+      <div className="card-container">
+        {catBreeds.map((breed) => (
+          <PetPreview key={breed.id} breed={breed} />
+        ))}
+      </div>
+    </div>
+  );
+};
+
+export default AllCats;
