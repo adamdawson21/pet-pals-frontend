@@ -10,21 +10,3 @@ export const fetchDogBreeds = async () => {
     throw error;
   }
 };
-
-export const getDogs = async () => {
-  try {
-    const response = await api.get("/dogs");
-    return response.data;
-  } catch (error) {
-    throw error;
-  }
-};
-
-export const getDog = async (id) => {
-  try {
-    const response = await api.get(`/dogs/${id}`);
-    return response.data;
-  } catch (error) {
-    throw error;
-  }
-};

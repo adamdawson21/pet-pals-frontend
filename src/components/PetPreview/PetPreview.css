@@ -1,23 +1,9 @@
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
 .card {
-  width: 400px;
-  height: 450px;
-  margin-top: 20px;
-}
-
-.card-header {
-  height: 50%;
-  margin-top: 20px;
-}
-
-.card-img {
-  width: 50%;
-  margin: 10px auto;
-}
-
-.card-body {
-  text-align: center;
-}
-
-.bold {
-  font-weight: bold;
+  width: calc(25% - 20px);
 }
