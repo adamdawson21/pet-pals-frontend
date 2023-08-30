@@ -1,11 +1,19 @@
 import React from 'react';
 import { Card, CardBody, CardFooter, Typography, Button } from '@material-tailwind/react';
+import { Link } from 'react-router-dom';
 import './PetPreview.css';
 
 export function PetPreview({ breed }) {
   return (
     <Card className="card">
       <CardBody className="card-body">
+        {breed.reference_image_id && (
+          <img
+            src={`https://cdn2.thedogapi.com/images/${breed.reference_image_id}.jpg`}
+            alt={breed.name}
+            className="card-img"
+          />
+        )}
         <Typography variant="h6" className="bold">
           {breed.name}
         </Typography>
@@ -26,7 +34,9 @@ export function PetPreview({ breed }) {
         </Typography>
       </CardBody>
       <CardFooter className="pt-0">
-        <Button>Read More</Button>
+        <Link to={`/alldogs/${breed.id}`}>
+          <Button>Read More</Button>
+        </Link>
       </CardFooter>
     </Card>
   );
