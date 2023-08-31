@@ -1,6 +1,7 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import './SignUp.css'
 import { Link, useNavigate } from "react-router-dom";
+import { signUp } from "../../services/users";
 
 const SignUp = (props) => {
   const navigate = useNavigate()
@@ -26,7 +27,7 @@ const SignUp = (props) => {
     event.preventDefault()
     const { setUser } = props
     try {
-      const user = await SignUp(form)
+      const user = await signUp(form)
       setUser(user)
       navigate('/')
     } catch (error) {
@@ -57,31 +58,31 @@ const SignUp = (props) => {
     }
   }
 
-  const { firstName, lastName, username, email, password, passwordConfirmation } = form
+  const { first_name, last_name, username, email, password, passwordConfirmation } = form
   return (
     <div className="sign-in-body-2">
       <div className="form-container">
         <h3>Sign Up</h3>
         <form onSubmit={onSignUp}>
-          <label for="firstName">First Name</label>
+          <label htmlFor="first_name">First Name</label>
           <input
             required
             type="text"
-            name="firstName"
-            value={firstName}
+            name="first_name"
+            value={first_name}
             placeholder="Enter First Name"
             onChange={handleChange}
           />
-          <label for="lastName">Last Name</label>
+          <label htmlFor="last_name">Last Name</label>
           <input
             required
             type="text"
-            name="lastName"
-            value={lastName}
+            name="last_name"
+            value={last_name}
             placeholder="Enter Last Name"
             onChange={handleChange}
           />
-          <label for="username">Username</label>
+          <label htmlFor="username">Username</label>
           <input
             required
             type="text"
@@ -90,7 +91,7 @@ const SignUp = (props) => {
             placeholder="Enter Username"
             onChange={handleChange}
           />
-          <label for="email">Email</label>
+          <label htmlFor="email">Email</label>
           <input
             required
             type="email"
@@ -99,7 +100,7 @@ const SignUp = (props) => {
             placeholder="Enter Email"
             onChange={handleChange}
           />
-          <label for="password">Password</label>
+          <label htmlFor="password">Password</label>
           <input
             required
             type="password"
@@ -108,7 +109,7 @@ const SignUp = (props) => {
             placeholder="Password"
             onChange={handleChange}
           />
-          <label for="passwordConfirmation">Password Confirmation</label>
+          <label htmlFor="passwordConfirmation">Password Confirmation</label>
           <input
             required
             type="password"
@@ -119,7 +120,7 @@ const SignUp = (props) => {
           />
           {renderError()}
         </form>
-      <div className="sign-in-text">
+        <div className="sign-in-text">
           Already have an Account? <Link to="/signin" className="underline">Sign In</Link>
         </div>
       </div>

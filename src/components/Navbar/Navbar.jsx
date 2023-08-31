@@ -1,12 +1,11 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import React from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 import './Navbar.css';
 import {
   Menu,
   MenuHandler,
   MenuList,
   MenuItem,
-  Avatar,
   Typography,
 } from '@material-tailwind/react';
 import {
@@ -15,9 +14,16 @@ import {
   ChatIcon,
   LogoutIcon,
 } from '@heroicons/react/solid';
+import { signOut } from '../../services/users.js';
 
-function App() {
-  const [isAuthenticated, setIsAuthenticated] = useState(false);
+function Navbar({ user, setUser }) {
+  const navigate = useNavigate();
+
+  const handleClick = () => {
+    signOut();
+    setUser(null);
+    navigate('/');
+  };
 
   return (
     <div className='App'>
@@ -50,7 +56,7 @@ function App() {
             <MenuList>
               <MenuItem className='flex items-center gap-2'>
                 <Link
-                  to={isAuthenticated ? '/profile' : '/signin'}
+                  to={user ? '/profile' : '/signin'}
                   className='flex items-center'
                 >
                   <UserIcon className='h-4 w-4 text-gray-500 mr-2' />
@@ -61,7 +67,7 @@ function App() {
               </MenuItem>
               <MenuItem className='flex items-center gap-2'>
                 <Link
-                  to={isAuthenticated ? '/comments' : '/signin'}
+                  to={user ? '/comments' : '/signin'}
                   className='flex items-center'
                 >
                   <ChatIcon className='h-4 w-4 text-gray-500 mr-2' />
@@ -80,16 +86,16 @@ function App() {
               </MenuItem>
               <hr className='my-2 border-blue-gray-50' />
               <MenuItem className='flex items-center gap-2 '>
-                {isAuthenticated ? (
-                  <Link
-                    to='/signout'
+                {user ? (
+                  <button
+                    onClick={handleClick}
                     className='flex items-center text-red-500'
                   >
                     <LogoutIcon className='h-4 w-4 text-gray-500 mr-2' />
                     <Typography variant='small' className='font-normal'>
                       Sign Out
                     </Typography>
-                  </Link>
+                  </button>
                 ) : (
                   <Link to='/signin' className='flex items-center'>
                     <LogoutIcon className='h-4 w-4 text-gray-500 mr-2' />
@@ -107,4 +113,4 @@ function App() {
   );
 }
 
-export default App;
+export default Navbar;
