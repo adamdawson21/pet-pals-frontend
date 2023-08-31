@@ -2,20 +2,20 @@ import React from "react";
 import "./PetBio.css";
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
-// import { useParams } from 'react-router-dom';
-// import { getCat } from '../../services/cats';
+import { useParams } from 'react-router-dom';
+import { getCat } from '../../services/cats';
+import { likePost } from "../../services/users";
+export default function PetBio({ user }) {
+  const [pet, setPet] = useState([]);
+  const { id } = useParams();
 
-export default function PetBio({ pet }) {
-  // const [pet, setPet] = useState([]);
-  // const { id } = useParams();
-
-  // useEffect(() => {
-  //   const fetchPet = async () => {
-  //     const pet = await getCat(id);
-  //     setPet(pet);
-  //   }
-  //   fetchPet();
-  // }, [id]);
+  useEffect(() => {
+    const fetchPet = async () => {
+      const pet = await getCat(id);
+      setPet(pet);
+    }
+    fetchPet();
+  }, [id]);
 
   const emailButton = () => {
     const recipient = "info@petpals.netlify.com";
@@ -27,6 +27,12 @@ export default function PetBio({ pet }) {
     window.open(mailtoLink, "_blank");
   }
 
+  const handleLikeToFav = async () => {
+    await likePost({
+      user: user.id,
+      post: id
+    });
+  }
 
   return (
     <div className="pet-bio-container" >
@@ -44,7 +50,7 @@ export default function PetBio({ pet }) {
         <br />
       <div className="buttons">
         {pet.animal_type === "Dog" ? <Link to={"/allDogs"} ><button>Go Back</button></Link> : <Link to={"/allCats"} ><button>Back</button></Link>}
-        <button>Add to Favorites</button>
+        <button onClick={handleLikeToFav}>Add to Favorites</button>
         <button onClick={emailButton}>Adopt Me!</button>
         </div>
       </div>

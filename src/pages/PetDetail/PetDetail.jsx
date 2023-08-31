@@ -22,7 +22,7 @@ export default function PetDetail({ user }) {
 
   return (
     <div>
-      <PetBio pet={pet} />
+      <PetBio pet={pet} user={user} />
       <CommentSection
         comments={pet.comments}
         postId={pet.id}

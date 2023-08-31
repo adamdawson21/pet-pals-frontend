@@ -66,6 +66,15 @@ export const addComment = async (comment) => {
   }
 };
 
+export const likePost = async (like) => {
+  try {
+    await api.post("/like/", like);
+  } catch (error) {
+    throw error;
+  }
+};
+
+
 export const editComment = async (id, comment) => {
   try {
     await api.put(`/comment/${id}/`, comment);
