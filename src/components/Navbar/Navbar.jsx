@@ -15,6 +15,7 @@ function Navbar({ user, setUser }) {
     navigate("/")
   }
 
+
   return (
     <div className="App">
       <nav className="nav-container">
