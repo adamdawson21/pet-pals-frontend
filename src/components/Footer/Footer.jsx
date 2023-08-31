@@ -15,9 +15,9 @@ return (
         </a>
         <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer">
           <FontAwesomeIcon icon={faFacebook} size="lg" />
-        </a>
-      </div>
-<p>&copy; {new Date().getFullYear()} PetPals. All rights reserved.</p>
+      </a>
+    </div>
+    <p>&copy; {new Date().getFullYear()} PetPals. All rights reserved.</p>
 </footer>
 );
 };

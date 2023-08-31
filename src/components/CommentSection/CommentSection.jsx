@@ -2,7 +2,8 @@ import React, { useEffect, useState } from "react";
 import { getUsers, addComment } from "../../services/users";
 
 export default function CommentSection({ comments, postId }) {
-  const { username } = JSON.parse(localStorage.getItem("user"));
+  // const { username } = JSON.parse(localStorage.getItem("user"));
+  // const user_
   const [users, setUsers] = useState([]);
   const [newComment, setNewComment] = useState({
     text: "",
@@ -45,7 +46,7 @@ export default function CommentSection({ comments, postId }) {
       ...prev,
       [name]: value,
       post: postId,
-      user: getUserId(username),
+      user: JSON,
     }));
   };
 

@@ -6,11 +6,16 @@
 }
 
 .nav-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
   display: flex;
   align-items: center;
-  margin-left: 20px;
   background-color: #f5f5f5; 
-  height: 80px;
+  height: 60px;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
 }
 .header {
   font-size: 20px;
@@ -21,7 +26,7 @@
 }
 
 .nav-list {
-  font-size: larger;
+font-size: larger;
 list-style: none;
 padding: 0;
 margin:0;
@@ -74,10 +79,14 @@ nav ul li a {
 
 .nav-container {
   position: fixed;
+  height: 50px;
   top: 0;
   left: 0;
   right: 0;
+  display: flex;
+  align-items: center;
   background-color: #ffffff;
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
   z-index: 1000; 
+  background-color:#00A6A6;
 }

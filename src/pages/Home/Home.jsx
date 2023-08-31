@@ -21,7 +21,7 @@ export default function Home() {
             src="https://i.imgur.com/hnZXESV.jpg"
           />
         </div>
-        <div class="DogText">
+        <div className="DogText">
           <h2 className="Text">
             Adopting a dog saves lives and brings immeasurable joy. It's a compassionate choice that fills your home with love while giving a deserving dog a forever family.
           </h2>
