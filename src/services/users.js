@@ -1,12 +1,10 @@
-import api from './apiConfig';
-// import jwtDecode from "jwt-decode";
+import api from "./apiConfig";
 
 export const signUp = async (credentials) => {
   try {
     const resp = await api.post("/signup", credentials);
-    console.log(resp)
+    console.log(resp);
     localStorage.setItem("token", resp.data.token);
-    // const user = jwtDecode(resp.data.token);
     return resp.data.token;
   } catch (error) {
     throw error;
@@ -22,10 +20,10 @@ export const signIn = async (credentials) => {
 
     return {
       id: resp.data.user.id,
-      username: resp.data.user.username
+      username: resp.data.user.username,
     };
   } catch (error) {
-    console.error(error)
+    console.error(error);
     throw error;
   }
 };
@@ -37,7 +35,7 @@ export const signOut = async () => {
   } catch (error) {
     throw error;
   }
-}
+};
 
 export const changePassword = async (passwords, user) => {
   try {
@@ -55,8 +53,24 @@ export const verifyUser = async () => {
   if (token) {
     return {
       id,
-      username
-    }
+      username,
+    };
   }
-  return false;
-}
+};
+
+export const addComment = async (comment) => {
+  try {
+    await api.post("/comment/", comment);
+  } catch (error) {
+    throw error;
+  }
+};
+
+export const getUsers = async () => {
+  try {
+    const users = await api.get("/get_users");
+    return users.data;
+  } catch (error) {
+    throw error;
+  }
+};
