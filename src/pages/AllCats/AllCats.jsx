@@ -21,8 +21,8 @@ const AllCats = () => {
 
   return (
     <div>
-      <h1>All Cats</h1>
-      <div className="card-container">
+      {/* <h1>All Cats</h1> */}
+      <div className='card-container'>
         {catBreeds.map((breed) => (
           <PetPreview key={breed.id} breed={breed} />
         ))}

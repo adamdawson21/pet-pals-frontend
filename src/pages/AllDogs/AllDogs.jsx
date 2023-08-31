@@ -21,8 +21,8 @@ const AllDogs = () => {
 
   return (
     <div>
-      <h1>All Dogs</h1>
-      <div className="card-container">
+      {/* <h1>All Dogs</h1> */}
+      <div className='card-container'>
         {dogBreeds.map((breed) => (
           <PetPreview key={breed.id} breed={breed} />
         ))}
@@ -32,4 +32,3 @@ const AllDogs = () => {
 };
 
 export default AllDogs;
-

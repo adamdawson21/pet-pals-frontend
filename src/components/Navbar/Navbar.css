@@ -5,18 +5,6 @@
   height: 100vh;
 }
 
-.nav-container {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  display: flex;
-  align-items: center;
-  background-color: #f5f5f5; 
-  height: 60px;
-  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
-  z-index: 1000;
-}
 .header {
   font-size: 20px;
   display: flex;
@@ -26,14 +14,13 @@
 }
 
 .nav-list {
-font-size: larger;
-list-style: none;
-padding: 0;
-margin:0;
-align-items: center;
-margin-right: auto;
+  font-size: larger;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  align-items: center;
+  margin-right: auto;
 }
-
 
 nav ul {
   list-style-type: none;
@@ -53,8 +40,8 @@ nav ul li a {
 
 .nav-list li {
   margin: 0;
-  padding: 15px 20px; 
-  font-size: 30px; 
+  padding: 15px 20px;
+  font-size: 30px;
 }
 
 .nav-list {
@@ -63,13 +50,14 @@ nav ul li a {
   margin: 0;
   display: flex;
   align-items: center; /* Center items vertically */
+  color: white;
 }
 
 .profile-icon {
   width: 40px; /* Set the width and height to create a circle */
   height: 40px;
   background-color: #ccc; /* Set the background color */
-  border-radius: 50%; 
+  border-radius: 50%;
   display: flex;
   align-items: center; /* Center vertically */
   justify-content: center; /* Center horizontally */
@@ -79,7 +67,7 @@ nav ul li a {
 
 .nav-container {
   position: fixed;
-  height: 50px;
+  height: 85px;
   top: 0;
   left: 0;
   right: 0;
@@ -87,6 +75,10 @@ nav ul li a {
   align-items: center;
   background-color: #ffffff;
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
-  z-index: 1000; 
-  background-color:#00A6A6;
+  z-index: 1000;
+  background-color: #00a6a6;
+}
+
+.li-text {
+  color: white;
 }
