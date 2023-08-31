@@ -8,21 +8,24 @@
   width: 100%;
   height: 350px;
   left: 0;
-  }
+}
 
+.social-icons {
+  display: flex;
+  gap: 15px;
+  align-items: flex-end;
+}
 
-  .social-icons {
-    display: flex;
-    gap: 15px;
-    align-items: flex-end;
-  }
-  
-  .social-icons a {
-    color: #333;
-    transition: color 0.2s;
-    font-size: 24px;
-  }
-  
-  .social-icons a:hover {
-    color: #007bff;
-  }
+.social-icons a {
+  color: #333;
+  transition: color 0.2s;
+  font-size: 24px;
+}
+
+.social-icons a:hover {
+  color: #007bff;
+}
+
+.footer-text {
+  margin-left: 460px;
+}
