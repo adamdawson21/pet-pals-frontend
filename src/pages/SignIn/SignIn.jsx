@@ -1,6 +1,6 @@
 import './SignIn.css'
 import { useState } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 
 const SignIn = (props) => {
   const navigate = useNavigate();
@@ -79,6 +79,9 @@ const SignIn = (props) => {
           />
           {renderError()}
         </form>
+        <div className="sign-in-text">
+          Don't have an Account? <Link to="/signup" className="underline">Sign Up</Link>
+        </div>
       </div>
     </div>
   );

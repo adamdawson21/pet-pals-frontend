@@ -1,5 +1,5 @@
 import { Routes, Route } from 'react-router-dom';
-import Navbar from './components/Navbar/Navbar';
+import PetNavbar from './components/Navbar/Navbar';
 import Footer from './components/Footer/Footer';
 import Home from './pages/Home/Home';
 import About from './pages/About/About';
@@ -17,7 +17,7 @@ import './App.css';
 export default function App() {
   return (
     <div className="App">
-      <Navbar />
+      <PetNavbar />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
@@ -26,9 +26,6 @@ export default function App() {
         <Route path="/signin" element={<SignIn />} />
         <Route path="/signup" element={<SignUp />} />
         <Route path="/profile" element={<Profile />} />
-
-        <Route path="/allcats/:id" element={<PetDetail />} />
-        <Route path="/alldogs/:id" element={<PetDetail />} />
         <Route path="allcats/:id" element={<PetDetail />} /> 
         <Route path="alldogs/:id" element={<PetDetail />} />
       </Routes>
