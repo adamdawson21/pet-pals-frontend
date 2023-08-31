@@ -7,30 +7,18 @@ export function PetPreview({ breed }) {
   return (
     <Card className="card">
       <CardBody className="card-body">
-        {breed.reference_image_id && (
-          <img
-            src={`https://cdn2.thedogapi.com/images/${breed.reference_image_id}.jpg`}
-            alt={breed.name}
-            className="card-img"
-          />
-        )}
+
+        <img
+          src={breed.image}
+          alt={breed.name}
+          className="card-img h-48 object-contain w-full"
+        />
+
         <Typography variant="h6" className="bold">
           {breed.name}
         </Typography>
         <Typography variant="body2">
-          Weight: {breed.weight.imperial} lbs ({breed.weight.metric} kg)
-        </Typography>
-        <Typography variant="body2">
-          Height: {breed.height.imperial} in ({breed.height.metric} cm)
-        </Typography>
-        <Typography variant="body2">
-          Life Span: {breed.life_span}
-        </Typography>
-        <Typography variant="body2">
-          Temperament: {breed.temperament}
-        </Typography>
-        <Typography variant="body2">
-          Origin: {breed.origin || 'Unknown'}
+          Age: {breed.age}
         </Typography>
       </CardBody>
       <CardFooter className="pt-0">

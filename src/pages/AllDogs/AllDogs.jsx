@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { fetchDogBreeds } from '../../services/dogs';
+import { getDogs } from '../../services/dogs';
 import { PetPreview } from '../../components/PetPreview/PetPreview';
 import './AllDogs.css';
 
@@ -12,7 +12,7 @@ const AllDogs = () => {
 
   const fetchDogBreedsData = async () => {
     try {
-      const fetchedDogBreeds = await fetchDogBreeds();
+      const fetchedDogBreeds = await getDogs();
       setDogBreeds(fetchedDogBreeds);
     } catch (error) {
       console.error('Error fetching dog breeds:', error);
