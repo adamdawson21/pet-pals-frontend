@@ -1,4 +1,5 @@
-import api from "./apiConfig";
+// import api from "./apiConfig";
+import { apiLikes, api } from "./apiConfig";
 
 export const signUp = async (credentials) => {
   try {
@@ -68,12 +69,11 @@ export const addComment = async (comment) => {
 
 export const likePost = async (like) => {
   try {
-    await api.post("/like/", like);
+    await apiLikes.post("/like/", like);
   } catch (error) {
     throw error;
   }
 };
-
 
 export const editComment = async (id, comment) => {
   try {
