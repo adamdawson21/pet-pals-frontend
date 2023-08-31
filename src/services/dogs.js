@@ -1,12 +1,19 @@
 import api from './apiConfig';
 
-export const fetchDogBreeds = async () => {
+export const getDogs = async () => {
   try {
-    const response = await api.get('/v1/breeds');
-    const fetchedDogBreeds = response.data;
-    return fetchedDogBreeds;
+    const response = await api.get("/dogs-cats/dogs");
+    return response.data;
   } catch (error) {
-    console.error('Error fetching dog breeds:', error);
+    throw error;
+  }
+};
+
+export const getDog = async (id) => {
+  try {
+    const response = await api.get(`/post/${id}`);
+    return response.data;
+  } catch (error) {
     throw error;
   }
 };

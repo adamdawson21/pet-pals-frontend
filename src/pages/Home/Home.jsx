@@ -6,7 +6,7 @@ export default function Home() {
     <>
       <HeroCarousel />
       <div className="parent">
-        <div clasName="CatImg">
+        <div className="CatImg">
           <img className="img"
             src="https://i.imgur.com/T2sxjnJ.jpg"
           />
