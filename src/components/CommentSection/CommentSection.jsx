@@ -91,7 +91,7 @@ export default function CommentSection({ comments, postId, user, setToggle }) {
         <div key={comment.id}>
           <p>{getUsername(comment.user)}</p>
           <p>{comment.text}</p>
-          {comment.user == user.id && (
+          {comment.user == user?.id && (
             <button
               onClick={handleEditComment}
               data-id={comment.id}
