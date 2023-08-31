@@ -16,16 +16,27 @@ export default function CommentSection({ comments, postId, user, setToggle }) {
       setUsers(usersFetched);
     }
     fetchUsers();
-  }, []);
+  }, [showEditForm]);
 
   const getUsername = (id) => {
     const user = users.filter((user) => user.id === id);
-    return user[0].username;
+    return user[0]?.username;
+  };
+
+  const handleAddComment = (e) => {
+    if (newComment.id) delete newComment.id;
+
+    setShowEditForm(false);
+    setNewComment({
+      text: "",
+      user: 0,
+      post: 0,
+    });
   };
 
   const handleEditComment = (e) => {
+    setShowEditForm(true);
     const data = e.target.dataset;
-    // console.log("comment: ", data);
 
     setNewComment((prev) => ({
       id: data.id,
@@ -48,7 +59,11 @@ export default function CommentSection({ comments, postId, user, setToggle }) {
 
   const handleSubmitAdd = async (e) => {
     e.preventDefault();
+    console.log("new comment at submitAdd: ", newComment);
     await addComment(newComment);
+
+    // if (newComment.id) delete newComment.id;
+
     setNewComment({
       text: "",
       user: 0,
@@ -59,13 +74,14 @@ export default function CommentSection({ comments, postId, user, setToggle }) {
 
   const handleSubmitEdit = async (e) => {
     e.preventDefault();
-    console.log("new comment: ", newComment);
     await editComment(newComment.id, newComment);
+    delete newComment.id;
     setNewComment({
       text: "",
       user: 0,
       post: 0,
     });
+    setShowEditForm(false);
     setToggle((prev) => !prev);
   };
 
@@ -88,8 +104,8 @@ export default function CommentSection({ comments, postId, user, setToggle }) {
           )}
         </div>
       ))}
-      <button onClick={handleEditComment}>Add Comment</button>
-      {showEditForm ? (
+      <button onClick={handleAddComment}>Add Comment</button>
+      {user && !showEditForm && (
         <form onSubmit={handleSubmitAdd}>
           <input
             type="text"
@@ -101,11 +117,12 @@ export default function CommentSection({ comments, postId, user, setToggle }) {
           />
           <button>Submit</button>
         </form>
-      ) : (
+      )}
+      {showEditForm && (
         <form onSubmit={handleSubmitEdit}>
           <input
             type="text"
-            placeholder="Type your comment here"
+            placeholder="Edit your comment"
             name="text"
             value={newComment.text}
             onChange={handleChange}
