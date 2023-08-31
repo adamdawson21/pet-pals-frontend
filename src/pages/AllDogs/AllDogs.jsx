@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { getDogs } from '../../services/dogs';
 import { PetPreview } from '../../components/PetPreview/PetPreview';
+import DogHero from '../../components/DogHero/DogHero';
 import './AllDogs.css';
 
 const AllDogs = () => {
@@ -21,8 +22,8 @@ const AllDogs = () => {
 
   return (
     <div>
-      {/* <h1>All Dogs</h1> */}
-      <div className='card-container'>
+      <DogHero />
+      <div className="card-container">
         {dogBreeds.map((breed) => (
           <PetPreview key={breed.id} breed={breed} />
         ))}
