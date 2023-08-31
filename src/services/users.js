@@ -57,3 +57,11 @@ export const getUsers = async () => {
     throw error;
   }
 };
+
+export const addComment = async (comment) => {
+  try {
+    await api.post("/comment", comment);
+  } catch (error) {
+    throw error;
+  }
+};

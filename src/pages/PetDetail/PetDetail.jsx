@@ -17,10 +17,12 @@ export default function PetDetail() {
     fetchPet();
   }, [id]);
 
+  // console.log("pet: ", pet);
+
   return (
     <div>
       <PetBio pet={pet} />
-      <CommentSection comments={pet.comments} />
+      <CommentSection comments={pet.comments} postId={pet.id} />
     </div>
   );
 }
