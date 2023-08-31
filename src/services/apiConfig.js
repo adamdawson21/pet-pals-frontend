@@ -6,16 +6,13 @@ const getToken = () => {
   });
 };
 
-const apiKey = "live_gQ5sovSRTUWJjEt9nSbqodxPkPwNxMwhN5N1FPdMdYUMh75FraTvDQFAdr6kNEUR";
-
 const api = axios.create({
-  baseURL: "https://api.thedogapi.com"
+  baseURL: "https://pet-pals-5f9adeeaa392.herokuapp.com/"
 });
 
 api.interceptors.request.use(
   async (config) => {
     config.headers["Authorization"] = await getToken();
-    config.headers["x-api-key"] = apiKey;
     return config;
   },
   function (error) {
