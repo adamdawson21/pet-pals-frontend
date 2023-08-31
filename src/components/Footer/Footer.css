@@ -1,4 +1,6 @@
 .Footer {
+  display: flex;
+  justify-content: center;
   background-color: #f0f0f0;
   padding: 10px;
   text-align: center;
@@ -6,4 +8,33 @@
   bottom: 0;
   width: 100%;
   }
+
+
+  .social-icons {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .social-icons a {
+    color: #333;
+    transition: color 0.2s;
+  }
+  
+  .social-icons a:hover {
+    color: #007bff;
+  }
+
+  .fab.fa-instagram:hover {
+    color: purple;
+  }
+
+  .fab.fa-twitter:hover {
+    color: blue;
+  }
+
+  .fab.fa-facebook:hover {
+    color: darkblue;
+  }
+
+
   
