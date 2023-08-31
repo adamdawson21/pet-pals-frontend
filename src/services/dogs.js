@@ -1,4 +1,4 @@
-import api from './apiConfig';
+import { api, apiLikes } from "./apiConfig";
 
 export const getDogs = async () => {
   try {
