@@ -25,11 +25,12 @@ function App() {
           </li>
         </ul>
         <div className="profile-icon">
-          <Menu>
+          <Menu className="menu">
             <MenuHandler>
               <UserIcon className="h-6 w-6 cursor-pointer" />
             </MenuHandler>
-            <MenuList>
+            <div className="drop-down">
+              <MenuList>
               <MenuItem className="flex items-center gap-2">
                 <Link to={isAuthenticated ? "/profile" : "/signin"} className="flex items-center"> 
                   <UserIcon className="h-4 w-4 text-gray-500 mr-2" /> 
@@ -73,6 +74,8 @@ function App() {
                 )}
               </MenuItem>
             </MenuList>
+            </div>
+            
           </Menu>
         </div>
       </nav>
