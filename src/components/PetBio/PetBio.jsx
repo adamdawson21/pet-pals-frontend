@@ -17,35 +17,36 @@ export default function PetBio({ pet }) {
   //   fetchPet();
   // }, [id]);
 
+  const emailButton = () => {
+    const recipient = "info@petpals.netlify.com";
+    const subject = "Adoption Request";
+    const body = "Hello, I am interested in adopting!";
+    const mailtoLink = `mailto:${encodeURIComponent(recipient)}
+                        ?subject=${encodeURIComponent(subject)}
+                        &body=${encodeURIComponent(body)}`;
+    window.open(mailtoLink, "_blank");
+  }
+
+
   return (
-    <div className="pet-bio-container">
-      <div className="pet-bio-header">
-        {pet.animal_type === "Dog" ? (
-          <Link to={"/allDogs"}>
-            <button>Back</button>
-          </Link>
-        ) : (
-          <Link to={"/allCats"}>
-            <button>Back</button>
-          </Link>
-        )}
-      </div>
+    <div className="pet-bio-container" >
       <div className="pet-bio-image>">
         <img src={pet.image} alt={pet.breed} />
       </div>
-
       <div className="pet-info-column">
-        <h1 className="name-header">Name:</h1> {pet.name}
-        <p>Status:</p> {pet.status}
-        <p>Breed:</p> {pet.breed}
-        <p>Approximate Age:</p> {pet.age}
-        <p>Gender:</p> {pet.gender}
-        <h1 className="name-footer">About {pet.name}</h1> {pet.description}
-      </div>
-
+        <p><span>Name:</span> {pet.name}</p>
+        <p><span>Status:</span> Available</p> 
+        <p><span>Breed:</span> {pet.breed}</p> 
+        <p><span>Age:</span> {pet.age}</p> 
+        <p><span>Gender:</span> {pet.gender}</p> 
+        <br />
+        <h1 className="pet-description">About {pet.name}</h1> {pet.description}
+        <br />
       <div className="buttons">
-        <button>Favorite</button>
-        <button>I'm interested!</button>
+        {pet.animal_type === "Dog" ? <Link to={"/allDogs"} ><button>Go Back</button></Link> : <Link to={"/allCats"} ><button>Back</button></Link>}
+        <button>Add to Favorites</button>
+        <button onClick={emailButton}>Adopt Me!</button>
+        </div>
       </div>
     </div>
   );
