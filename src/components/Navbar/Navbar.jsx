@@ -53,7 +53,7 @@ function Navbar({ user, setUser }) {
             <MenuHandler>
               <UserIcon className='h-6 w-6 cursor-pointer' />
             </MenuHandler>
-            <MenuList>
+            <MenuList className='mt-5'>
               <MenuItem className='flex items-center gap-2'>
                 <Link
                   to={user ? '/profile' : '/signin'}
