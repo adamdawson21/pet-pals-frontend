@@ -4,6 +4,7 @@ import './Navbar.css';
 import { Menu, MenuHandler, MenuList, MenuItem, Avatar, Typography, } from "@material-tailwind/react";
 import { UserIcon, PencilIcon, ChatIcon, LogoutIcon } from "@heroicons/react/solid";
 
+
 function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
 
