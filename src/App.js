@@ -1,24 +1,21 @@
-import { Routes, Route } from 'react-router-dom';
-import PetNavbar from './components/Navbar/Navbar';
-import Footer from './components/Footer/Footer';
-import Home from './pages/Home/Home';
-import About from './pages/About/About';
-import AllCats from './pages/AllCats/AllCats';
-import AllDogs from './pages/AllDogs/AllDogs';
-import SignIn from './pages/SignIn/SignIn';
-import SignUp from './pages/SignUp/SignUp';
-import Profile from './pages/Profile/Profile';
-import PetDetail from './pages/PetDetail/PetDetail';
-import { useState } from 'react';
-import { verifyUser } from './services/users';
-import { useEffect } from 'react';
-import './App.css';
-
-
-
+import { Routes, Route } from "react-router-dom";
+import PetNavbar from "./components/Navbar/Navbar";
+import Footer from "./components/Footer/Footer";
+import Home from "./pages/Home/Home";
+import About from "./pages/About/About";
+import AllCats from "./pages/AllCats/AllCats";
+import AllDogs from "./pages/AllDogs/AllDogs";
+import SignIn from "./pages/SignIn/SignIn";
+import SignUp from "./pages/SignUp/SignUp";
+import Profile from "./pages/Profile/Profile";
+import PetDetail from "./pages/PetDetail/PetDetail";
+import { useState } from "react";
+import { verifyUser } from "./services/users";
+import { useEffect } from "react";
+import "./App.css";
 
 export default function App() {
-  const [user, setUser] = useState(null)
+  const [user, setUser] = useState(null);
 
   useEffect(() => {
     const fetchUser = async () => {
@@ -44,7 +41,5 @@ export default function App() {
       </Routes>
       <Footer />
     </div>
-  )
+  );
 }
-
-
