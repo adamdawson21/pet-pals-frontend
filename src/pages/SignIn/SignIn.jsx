@@ -1,12 +1,13 @@
 import './SignIn.css'
 import { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
+import { signIn } from '../../services/users';
 
 const SignIn = (props) => {
   const navigate = useNavigate();
 
   const [form, setForm] = useState({
-    email: "",
+    username: "",
     password: "",
     isError: false,
     errorMsg: "",
@@ -23,7 +24,7 @@ const SignIn = (props) => {
     event.preventDefault();
     const { setUser } = props;
     try {
-      const user = await SignIn(form);
+      const user = await signIn(form);
       setUser(user);
       navigate("/")
     } catch (error) {
@@ -31,7 +32,7 @@ const SignIn = (props) => {
       setForm({
         isError: true,
         errorMsg: "Invalid Credentials",
-        email: "",
+        username: "",
         password: "",
       });
     }
@@ -50,7 +51,7 @@ const SignIn = (props) => {
     }
   };
 
-  const { email, password } = form;
+  const { username, password } = form;
 
   return (
 
@@ -59,16 +60,16 @@ const SignIn = (props) => {
 
         <h3>Sign In</h3>
         <form onSubmit={onSignIn}>
-          <label for="email">Email</label>
+          <label htmlFor="username">Username</label>
           <input
             required
             type="text"
-            name="email"
-            value={email}
-            placeholder="Enter Email"
+            name="username"
+            value={username}
+            placeholder="username"
             onChange={handleChange}
           />
-          <label for="password">Password</label>
+          <label htmlFor="password">Password</label>
           <input
             required
             name="password"
