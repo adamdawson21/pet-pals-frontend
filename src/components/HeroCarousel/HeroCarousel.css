@@ -1,11 +1,12 @@
 .Carousel {
   display: flexbox;
-  height: 50vh;
+  height: 60vh;
   overflow: hidden;
+  margin-top: 80px;
 }
 
 .Image {
   width: 100%;
-  height: 50vh; 
+  height: 60vh; 
   object-fit: cover 
 }

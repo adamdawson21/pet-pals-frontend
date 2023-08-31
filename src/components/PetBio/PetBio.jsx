@@ -1,10 +1,11 @@
 import './PetBio.css'
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { getCat } from '../../services/cats';
 import { Button } from '@material-tailwind/react';
+import { likePost } from "../../services/users";
 
-export default function PetBio() {
+export default function PetBio({ user }) {
   const [pet, setPet] = useState([]);
   const { id } = useParams();
 
@@ -26,14 +27,12 @@ export default function PetBio() {
     window.open(mailtoLink, "_blank");
   }
 
-  const addToFavorites = () => {
-    
-
-
+  const handleLikeToFav = async () => {
+    await likePost({
+      user: user.id,
+      post: id
+    });
   }
-
-
-
 
   return (
     <div className="pet-bio-container" >
@@ -55,13 +54,9 @@ export default function PetBio() {
         <br />
 
       <div className="buttons">
-          {pet.animal_type === "Dog" ? <Link to={"/allDogs"} >
-            <Button>Go Back</Button>
-          </Link> : <Link to={"/allCats"} >
-            <Button>Go Back</Button>
-            </Link>}
-        <Button onClick={addToFavorites}>Add to Favorites</Button>
-        <Button onClick={emailButton}>Adopt Me!</Button>
+        {pet.animal_type === "Dog" ? <Link to={"/allDogs"} ><button>Go Back</button></Link> : <Link to={"/allCats"} ><button>Back</button></Link>}
+        <button onClick={handleLikeToFav}>Add to Favorites</button>
+        <button onClick={emailButton}>Adopt Me!</button>
         </div>
       </div>
     </div>
