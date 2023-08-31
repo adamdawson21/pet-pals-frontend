@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { getUsers, addComment } from "../../services/users";
 
-export default function CommentSection({ comments, postId }) {
+export default function CommentSection({ comments, postId, user, setToggle }) {
   // const { username } = JSON.parse(localStorage.getItem("user"));
   // const user_
   const [users, setUsers] = useState([]);
@@ -20,18 +20,13 @@ export default function CommentSection({ comments, postId }) {
     // console.log("users: ", users);
   }, []);
 
-  console.log("postId: ", postId);
+  // console.log("postId: ", postId);
 
-  console.log("users: ", users);
-
-  function getUserId(username) {
-    const user = users.filter((user) => user.username === username);
-    console.log("getuserid: ", user);
-    return user[0].id;
-  }
+  // console.log("users: ", users);
 
   const getUsername = (id) => {
     const user = users.filter((user) => user.id === id);
+    console.log("usrr:", user);
     return user[0].username;
   };
 
@@ -42,17 +37,25 @@ export default function CommentSection({ comments, postId }) {
   const handleChange = (e) => {
     const { name, value } = e.target;
 
+    console.log("user: ", user);
     setNewComment((prev) => ({
       ...prev,
       [name]: value,
       post: postId,
-      user: JSON,
+      user: user.id,
     }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     console.log("THIS IS THE COMMENT: ", newComment);
+    await addComment(newComment);
+    setNewComment({
+      text: "",
+      user: 0,
+      post: 0,
+    });
+    setToggle((prev) => !prev);
   };
 
   return (

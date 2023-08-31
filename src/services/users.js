@@ -1,12 +1,10 @@
 import api from "./apiConfig";
-// import jwtDecode from "jwt-decode";
 
 export const signUp = async (credentials) => {
   try {
     const resp = await api.post("/signup", credentials);
     console.log(resp);
     localStorage.setItem("token", resp.data.token);
-    // const user = jwtDecode(resp.data.token);
     return resp.data.token;
   } catch (error) {
     throw error;
@@ -62,7 +60,16 @@ export const verifyUser = async () => {
 
 export const addComment = async (comment) => {
   try {
-    await api.post("/comment", comment);
+    await api.post("/comment/", comment);
+  } catch (error) {
+    throw error;
+  }
+};
+
+export const getUsers = async () => {
+  try {
+    const users = await api.get("/get_users");
+    return users.data;
   } catch (error) {
     throw error;
   }
