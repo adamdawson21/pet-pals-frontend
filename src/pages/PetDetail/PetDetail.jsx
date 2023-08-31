@@ -12,7 +12,6 @@ export default function PetDetail() {
   useEffect(() => {
     const fetchPet = async () => {
       const pet = await getCat(id);
-      console.log("pet: ", pet);
       setPet(pet);
     };
     fetchPet();

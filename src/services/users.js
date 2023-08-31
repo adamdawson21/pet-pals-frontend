@@ -1,26 +1,26 @@
-import api from './apiConfig';
-import jwtDecode from "jwt-decode";
+import api from "./apiConfig";
+// import jwtDecode from "jwt-decode";
 
-export const signUp = async (credentials) => {
-  try {
-    const resp = await api.post("/users/signup", credentials);
-    localStorage.setItem("token", resp.data.token);
-    const user = jwtDecode(resp.data.token);
-  } catch (error) {
-    throw error;
-  }
-};
+// export const signUp = async (credentials) => {
+//   try {
+//     const resp = await api.post("/users/signup", credentials);
+//     localStorage.setItem("token", resp.data.token);
+//     const user = jwtDecode(resp.data.token);
+//   } catch (error) {
+//     throw error;
+//   }
+// };
 
-export const signIn = async (credentials) => {
-  try {
-    const resp = await api.post("/users/signin", credentials);
-    localStorage.setItem("token", resp.data.token);
-    const user = jwtDecode(resp.data.token);
-    return user;
-  } catch (error) {
-    throw error;
-  }
-};
+// export const signIn = async (credentials) => {
+//   try {
+//     const resp = await api.post("/users/signin", credentials);
+//     localStorage.setItem("token", resp.data.token);
+//     const user = jwtDecode(resp.data.token);
+//     return user;
+//   } catch (error) {
+//     throw error;
+//   }
+// };
 
 export const signOut = async () => {
   try {
@@ -29,7 +29,7 @@ export const signOut = async () => {
   } catch (error) {
     throw error;
   }
-}
+};
 
 export const changePassword = async (passwords, user) => {
   try {
@@ -40,11 +40,20 @@ export const changePassword = async (passwords, user) => {
   }
 };
 
-export const verifyUser = async () => {
-  const token = localStorage.getItem("token");
-  if (token) {
-    const res = await api.get("/users/verify");
-    return res.data;
+// export const verifyUser = async () => {
+//   const token = localStorage.getItem("token");
+//   if (token) {
+//     const res = await api.get("/users/verify");
+//     return res.data;
+//   }
+//   return false;
+// };
+
+export const getUsers = async () => {
+  try {
+    const users = await api.get("/get_users");
+    return users.data;
+  } catch (error) {
+    throw error;
   }
-  return false;
-}
+};
