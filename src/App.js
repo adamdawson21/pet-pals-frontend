@@ -19,6 +19,7 @@ import './App.css';
 
 export default function App() {
   const [user, setUser] = useState(null)
+
   useEffect(() => {
     const fetchUser = async () => {
       const user = await verifyUser();
@@ -26,9 +27,10 @@ export default function App() {
     };
     fetchUser();
   }, []);
+
   return (
     <div className="App">
-      <PetNavbar />
+      <PetNavbar user={user} setUser={setUser} />
       <Routes>
         <Route path="/" element={<Home user={user} />} />
         <Route path="/about" element={<About user={user} />} />
