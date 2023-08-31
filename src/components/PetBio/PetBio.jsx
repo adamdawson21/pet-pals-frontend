@@ -1,10 +1,10 @@
-import React from "react";
-import "./PetBio.css";
-import { Link } from "react-router-dom";
-import { useState, useEffect } from "react";
-import { useParams } from 'react-router-dom';
+import './PetBio.css'
+import { useState, useEffect } from 'react';
+import { useParams, Link } from 'react-router-dom';
 import { getCat } from '../../services/cats';
+import { Button } from '@material-tailwind/react';
 import { likePost } from "../../services/users";
+
 export default function PetBio({ user }) {
   const [pet, setPet] = useState([]);
   const { id } = useParams();
@@ -37,17 +37,22 @@ export default function PetBio({ user }) {
   return (
     <div className="pet-bio-container" >
       <div className="pet-bio-image>">
-        <img src={pet.image} alt={pet.breed} />
+        <img
+          src={pet.image}
+          alt={pet.breed}
+        />
       </div>
+
       <div className="pet-info-column">
-        <p><span>Name:</span> {pet.name}</p>
+        <h1 className="pet-name">About {pet.name}</h1>
         <p><span>Status:</span> Available</p> 
         <p><span>Breed:</span> {pet.breed}</p> 
         <p><span>Age:</span> {pet.age}</p> 
         <p><span>Gender:</span> {pet.gender}</p> 
         <br />
-        <h1 className="pet-description">About {pet.name}</h1> {pet.description}
+        {pet.description}
         <br />
+
       <div className="buttons">
         {pet.animal_type === "Dog" ? <Link to={"/allDogs"} ><button>Go Back</button></Link> : <Link to={"/allCats"} ><button>Back</button></Link>}
         <button onClick={handleLikeToFav}>Add to Favorites</button>
@@ -55,5 +60,5 @@ export default function PetBio({ user }) {
         </div>
       </div>
     </div>
-  );
+  )
 }
