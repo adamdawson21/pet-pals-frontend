@@ -1,40 +1,31 @@
 .Footer {
   display: flex;
-  justify-content: center;
+  align-items: flex-end;
   background-color: #f0f0f0;
   padding: 10px;
   text-align: center;
-  position: fixed;
   bottom: 0;
   width: 100%;
-  }
+  height: 350px;
+  left: 0;
+}
 
+.social-icons {
+  display: flex;
+  gap: 15px;
+  align-items: flex-end;
+}
 
-  .social-icons {
-    display: flex;
-    gap: 10px;
-  }
-  
-  .social-icons a {
-    color: #333;
-    transition: color 0.2s;
-  }
-  
-  .social-icons a:hover {
-    color: #007bff;
-  }
+.social-icons a {
+  color: #333;
+  transition: color 0.2s;
+  font-size: 24px;
+}
 
-  .fab.fa-instagram:hover {
-    color: purple;
-  }
+.social-icons a:hover {
+  color: #007bff;
+}
 
-  .fab.fa-twitter:hover {
-    color: blue;
-  }
-
-  .fab.fa-facebook:hover {
-    color: darkblue;
-  }
-
-
-  
+.footer-text {
+  margin-left: 460px;
+}

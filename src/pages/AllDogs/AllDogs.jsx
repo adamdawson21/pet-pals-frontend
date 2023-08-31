@@ -33,4 +33,3 @@ const AllDogs = () => {
 };
 
 export default AllDogs;
-

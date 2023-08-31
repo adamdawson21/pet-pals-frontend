@@ -7,7 +7,7 @@ const getToken = () => {
 };
 
 const api = axios.create({
-  baseURL: "https://pet-pals-5f9adeeaa392.herokuapp.com/"
+  baseURL: "https://pet-pals-5f9adeeaa392.herokuapp.com/",
 });
 
 api.interceptors.request.use(

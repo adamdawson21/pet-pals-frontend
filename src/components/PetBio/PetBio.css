@@ -1,0 +1,29 @@
+.pet-bio-container{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: center;
+  justify-content: center;
+  width: 80%;
+  margin: 5rem auto;
+}
+
+.pet-info-column {
+  text-align:left;
+}
+
+.buttons {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-content: space-between;
+  width: 100%;
+  margin-top: 1rem;
+}
+
+.pet-bio-container h1{
+  font-size: 2rem;
+}
+
+span {
+  font-weight: bold;
+}
+
