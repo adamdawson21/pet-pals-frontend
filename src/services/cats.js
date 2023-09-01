@@ -17,3 +17,12 @@ export const getCat = async (id) => {
     throw error;
   }
 };
+
+export const getPosts = async (id) => {
+  try {
+    const response = await api.get(`/post/${id}`);
+    return response.data;
+  } catch (error) {
+    throw error;
+  }
+};
