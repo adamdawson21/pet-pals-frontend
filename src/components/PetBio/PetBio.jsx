@@ -20,9 +20,9 @@ export default function PetBio({ user }) {
   }, [id]);
 
   const emailButton = () => {
-    const recipient = "info@petpals.netlify.com";
-    const subject = "Adoption Request";
-    const body = "Hello, I am interested in adopting!";
+    const recipient = "inquiries@petpals.netlify.app";
+    const subject = `Adoption Request - ${pet.name}`;
+    const body = `Hello, I am interested in adopting ${pet.name}!`;
     const mailtoLink = `mailto:${encodeURIComponent(recipient)}
                         ?subject=${encodeURIComponent(subject)}
                         &body=${encodeURIComponent(body)}`;
@@ -75,15 +75,15 @@ export default function PetBio({ user }) {
         <div className="buttons">
           {pet.animal_type === "Dog" ? (
             <Link to={"/allDogs"}>
-              <button>Go Back</button>
+              <Button>Go Back</Button>
             </Link>
           ) : (
             <Link to={"/allCats"}>
-              <button>Back</button>
+              <Button>Back</Button>
             </Link>
           )}
-          <button onClick={handleLikeToFav}>Add to Favorites</button>
-          <button onClick={emailButton}>Adopt Me!</button>
+          <Button onClick={handleLikeToFav}>Add to Favorites</Button>
+          <Button onClick={emailButton}>Adopt Me!</Button>
         </div>
       </div>
       <ToastContainer />
