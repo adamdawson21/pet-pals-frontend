@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { getUsers, addComment, editComment } from "../../services/users";
 import "./CommentSection.css";
 
@@ -10,6 +10,7 @@ export default function CommentSection({ comments, postId, user, setToggle }) {
     post: 0,
   });
   const [showEditForm, setShowEditForm] = useState(false);
+  const [showAddForm, setShowAddForm] = useState(false);
 
   useEffect(() => {
     async function fetchUsers() {
@@ -79,6 +80,7 @@ export default function CommentSection({ comments, postId, user, setToggle }) {
   const handleAddComment = (e) => {
     if (newComment.id) delete newComment.id;
 
+    setShowAddForm(true);
     setShowEditForm(false);
     setNewComment({
       text: "",
@@ -89,6 +91,7 @@ export default function CommentSection({ comments, postId, user, setToggle }) {
 
   const handleEditComment = (e) => {
     setShowEditForm(true);
+    setShowAddForm(false);
     const data = e.target.dataset;
 
     setNewComment((prev) => ({
@@ -114,8 +117,6 @@ export default function CommentSection({ comments, postId, user, setToggle }) {
     e.preventDefault();
     console.log("new comment at submitAdd: ", newComment);
     await addComment(newComment);
-
-    // if (newComment.id) delete newComment.id;
 
     setNewComment({
       text: "",
@@ -169,7 +170,7 @@ export default function CommentSection({ comments, postId, user, setToggle }) {
       >
         Add Comment
       </button>
-      {user && !showEditForm && (
+      {user && showAddForm && (
         <div className="comment-section-forms-container">
           <hr className="comment-hr" />
           <h1>New Comment</h1>
