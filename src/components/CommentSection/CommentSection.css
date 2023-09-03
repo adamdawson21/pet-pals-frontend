@@ -76,7 +76,6 @@
 }
 
 .comment-section-forms-container {
-  /* border: solid red; */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -97,7 +96,6 @@
 }
 
 .comment-section-forms {
-  /* border: solid blue; */
   width: 100%;
   display: flex;
   flex-direction: column;
