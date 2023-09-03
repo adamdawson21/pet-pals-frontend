@@ -147,6 +147,9 @@ export default function CommentSection({ comments, postId, user, setToggle }) {
   return (
     <div className="comment-section-container">
       <h1 className="comment-section-header">Comments</h1>
+      {!comments?.length && (
+        <p className="no-comments-message">(no comments yet)</p>
+      )}
       {comments?.map((comment) => (
         <div className="comment-container" key={comment.id}>
           <div className="comment-header">
