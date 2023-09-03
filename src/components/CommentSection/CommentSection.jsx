@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { getUsers, addComment, editComment } from "../../services/users";
+import "./CommentSection.css";
 
 export default function CommentSection({ comments, postId, user, setToggle }) {
   const [users, setUsers] = useState([]);
@@ -21,6 +22,58 @@ export default function CommentSection({ comments, postId, user, setToggle }) {
   const getUsername = (id) => {
     const user = users.filter((user) => user.id === id);
     return user[0]?.username;
+  };
+
+  const formatDate = (date) => {
+    const dateArr = date.split("-");
+
+    let newDate = "";
+
+    switch (dateArr[1]) {
+      case "01":
+        newDate = "January ";
+        break;
+      case "02":
+        newDate = "February ";
+        break;
+      case "03":
+        newDate = "March ";
+        break;
+      case "04":
+        newDate = "April ";
+        break;
+      case "05":
+        newDate = "May ";
+        break;
+      case "06":
+        newDate = "June ";
+        break;
+      case "07":
+        newDate = "July ";
+        break;
+      case "08":
+        newDate = "August ";
+        break;
+      case "09":
+        newDate = "September ";
+        break;
+      case "10":
+        newDate = "October ";
+        break;
+      case "11":
+        newDate = "November ";
+        break;
+      case "12":
+        newDate = "December ";
+        break;
+    }
+
+    if (dateArr[2].charAt(0) === "0") newDate += dateArr[2].charAt(1) + ", ";
+    else newDate += dateArr[2] + ", ";
+
+    newDate += dateArr[0];
+
+    return newDate;
   };
 
   const handleAddComment = (e) => {
@@ -86,25 +139,36 @@ export default function CommentSection({ comments, postId, user, setToggle }) {
   };
 
   return (
-    <div>
+    <div className="comment-section-container">
+      <h1 className="comment-section-header">Comments</h1>
       {comments?.map((comment) => (
-        <div key={comment.id}>
-          <p>{getUsername(comment.user)}</p>
-          <p>{comment.text}</p>
+        <div className="comment-container" key={comment.id}>
+          <div className="comment-header">
+            <p className="comment-user">{getUsername(comment.user)}</p>
+            <p className="comment-date">{formatDate(comment.created_at)}</p>
+          </div>
+          <hr className="comment-hr" />
+          <p className="comment-text">{comment.text}</p>
           {comment.user == user?.id && (
             <button
+              className="comment-section-buttons comment-edit-button"
               onClick={handleEditComment}
               data-id={comment.id}
               data-text={comment.text}
               data-postid={comment.post}
               data-userid={comment.user}
             >
-              Edit your comment
+              Edit
             </button>
           )}
         </div>
       ))}
-      <button onClick={handleAddComment}>Add Comment</button>
+      <button
+        className="comment-section-buttons comment-add-button"
+        onClick={handleAddComment}
+      >
+        Add Comment
+      </button>
       {user && !showEditForm && (
         <form onSubmit={handleSubmitAdd}>
           <input
@@ -115,7 +179,7 @@ export default function CommentSection({ comments, postId, user, setToggle }) {
             onChange={handleChange}
             required
           />
-          <button>Submit</button>
+          <button className="comment-section-buttons">Submit</button>
         </form>
       )}
       {showEditForm && (
@@ -128,7 +192,7 @@ export default function CommentSection({ comments, postId, user, setToggle }) {
             onChange={handleChange}
             required
           />
-          <button>Submit</button>
+          <button className="comment-section-buttons">Submit</button>
         </form>
       )}
     </div>
