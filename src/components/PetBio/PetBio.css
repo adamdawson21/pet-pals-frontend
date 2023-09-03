@@ -1,4 +1,4 @@
-.pet-bio-container{
+.pet-bio-container {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   align-items: center;
@@ -8,7 +8,7 @@
 }
 
 .pet-info-column {
-  text-align:left;
+  text-align: left;
 }
 
 .buttons {
@@ -19,11 +19,10 @@
   margin-top: 1rem;
 }
 
-.pet-bio-container h1{
+.pet-bio-container h1 {
   font-size: 2rem;
 }
 
 span {
   font-weight: bold;
 }
-

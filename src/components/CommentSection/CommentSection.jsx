@@ -1,5 +1,6 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { getUsers, addComment, editComment } from "../../services/users";
+import "./CommentSection.css";
 
 export default function CommentSection({ comments, postId, user, setToggle }) {
   const [users, setUsers] = useState([]);
@@ -9,6 +10,7 @@ export default function CommentSection({ comments, postId, user, setToggle }) {
     post: 0,
   });
   const [showEditForm, setShowEditForm] = useState(false);
+  const [showAddForm, setShowAddForm] = useState(false);
 
   useEffect(() => {
     async function fetchUsers() {
@@ -23,9 +25,62 @@ export default function CommentSection({ comments, postId, user, setToggle }) {
     return user[0]?.username;
   };
 
+  const formatDate = (date) => {
+    const dateArr = date.split("-");
+
+    let newDate = "";
+
+    switch (dateArr[1]) {
+      case "01":
+        newDate = "January ";
+        break;
+      case "02":
+        newDate = "February ";
+        break;
+      case "03":
+        newDate = "March ";
+        break;
+      case "04":
+        newDate = "April ";
+        break;
+      case "05":
+        newDate = "May ";
+        break;
+      case "06":
+        newDate = "June ";
+        break;
+      case "07":
+        newDate = "July ";
+        break;
+      case "08":
+        newDate = "August ";
+        break;
+      case "09":
+        newDate = "September ";
+        break;
+      case "10":
+        newDate = "October ";
+        break;
+      case "11":
+        newDate = "November ";
+        break;
+      case "12":
+        newDate = "December ";
+        break;
+    }
+
+    if (dateArr[2].charAt(0) === "0") newDate += dateArr[2].charAt(1) + ", ";
+    else newDate += dateArr[2] + ", ";
+
+    newDate += dateArr[0];
+
+    return newDate;
+  };
+
   const handleAddComment = (e) => {
     if (newComment.id) delete newComment.id;
 
+    setShowAddForm(true);
     setShowEditForm(false);
     setNewComment({
       text: "",
@@ -36,6 +91,7 @@ export default function CommentSection({ comments, postId, user, setToggle }) {
 
   const handleEditComment = (e) => {
     setShowEditForm(true);
+    setShowAddForm(false);
     const data = e.target.dataset;
 
     setNewComment((prev) => ({
@@ -62,8 +118,6 @@ export default function CommentSection({ comments, postId, user, setToggle }) {
     console.log("new comment at submitAdd: ", newComment);
     await addComment(newComment);
 
-    // if (newComment.id) delete newComment.id;
-
     setNewComment({
       text: "",
       user: 0,
@@ -85,51 +139,94 @@ export default function CommentSection({ comments, postId, user, setToggle }) {
     setToggle((prev) => !prev);
   };
 
+  const handleClickCancel = (e) => {
+    setShowAddForm(false);
+    setShowEditForm(false);
+  };
+
   return (
-    <div>
+    <div className="comment-section-container">
+      <h1 className="comment-section-header">Comments</h1>
+      {!comments?.length && (
+        <p className="no-comments-message">(no comments yet)</p>
+      )}
       {comments?.map((comment) => (
-        <div key={comment.id}>
-          <p>{getUsername(comment.user)}</p>
-          <p>{comment.text}</p>
+        <div className="comment-container" key={comment.id}>
+          <div className="comment-header">
+            <p className="comment-user">{getUsername(comment.user)}</p>
+            <p className="comment-date">{formatDate(comment.created_at)}</p>
+          </div>
+          <hr className="comment-hr" />
+          <p className="comment-text">{comment.text}</p>
           {comment.user == user?.id && (
             <button
+              className="comment-section-buttons comment-edit-button"
               onClick={handleEditComment}
               data-id={comment.id}
               data-text={comment.text}
               data-postid={comment.post}
               data-userid={comment.user}
             >
-              Edit your comment
+              Edit
             </button>
           )}
         </div>
       ))}
-      <button onClick={handleAddComment}>Add Comment</button>
-      {user && !showEditForm && (
-        <form onSubmit={handleSubmitAdd}>
-          <input
-            type="text"
-            placeholder="Type your comment here"
-            name="text"
-            value={newComment.text}
-            onChange={handleChange}
-            required
-          />
-          <button>Submit</button>
-        </form>
+      <button
+        className="comment-section-buttons comment-add-button"
+        onClick={handleAddComment}
+      >
+        Add Comment
+      </button>
+      {user && showAddForm && (
+        <div className="comment-section-forms-container">
+          <hr className="comment-hr" />
+          <h1>New Comment</h1>
+          <form className="comment-section-forms" onSubmit={handleSubmitAdd}>
+            <textarea
+              type="text"
+              placeholder="Type your comment here..."
+              name="text"
+              value={newComment.text}
+              onChange={handleChange}
+              required
+            />
+            <div>
+              <button
+                className="comment-section-buttons comment-cancel-button"
+                onClick={handleClickCancel}
+              >
+                Cancel
+              </button>
+              <button className="comment-section-buttons">Submit</button>
+            </div>
+          </form>
+        </div>
       )}
       {showEditForm && (
-        <form onSubmit={handleSubmitEdit}>
-          <input
-            type="text"
-            placeholder="Edit your comment"
-            name="text"
-            value={newComment.text}
-            onChange={handleChange}
-            required
-          />
-          <button>Submit</button>
-        </form>
+        <div className="comment-section-forms-container">
+          <hr className="comment-hr" />
+          <h1>Edit Your Comment</h1>
+          <form className="comment-section-forms" onSubmit={handleSubmitEdit}>
+            <textarea
+              type="text"
+              placeholder="Edit your comment..."
+              name="text"
+              value={newComment.text}
+              onChange={handleChange}
+              required
+            />
+            <div>
+              <button
+                className="comment-section-buttons comment-cancel-button"
+                onClick={handleClickCancel}
+              >
+                Cancel
+              </button>
+              <button className="comment-section-buttons">Submit</button>
+            </div>
+          </form>
+        </div>
       )}
     </div>
   );
