@@ -139,6 +139,11 @@ export default function CommentSection({ comments, postId, user, setToggle }) {
     setToggle((prev) => !prev);
   };
 
+  const handleClickCancel = (e) => {
+    setShowAddForm(false);
+    setShowEditForm(false);
+  };
+
   return (
     <div className="comment-section-container">
       <h1 className="comment-section-header">Comments</h1>
@@ -183,7 +188,15 @@ export default function CommentSection({ comments, postId, user, setToggle }) {
               onChange={handleChange}
               required
             />
-            <button className="comment-section-buttons">Submit</button>
+            <div>
+              <button
+                className="comment-section-buttons comment-cancel-button"
+                onClick={handleClickCancel}
+              >
+                Cancel
+              </button>
+              <button className="comment-section-buttons">Submit</button>
+            </div>
           </form>
         </div>
       )}
@@ -200,7 +213,15 @@ export default function CommentSection({ comments, postId, user, setToggle }) {
               onChange={handleChange}
               required
             />
-            <button className="comment-section-buttons">Submit</button>
+            <div>
+              <button
+                className="comment-section-buttons comment-cancel-button"
+                onClick={handleClickCancel}
+              >
+                Cancel
+              </button>
+              <button className="comment-section-buttons">Submit</button>
+            </div>
           </form>
         </div>
       )}
