@@ -170,30 +170,38 @@ export default function CommentSection({ comments, postId, user, setToggle }) {
         Add Comment
       </button>
       {user && !showEditForm && (
-        <form onSubmit={handleSubmitAdd}>
-          <input
-            type="text"
-            placeholder="Type your comment here"
-            name="text"
-            value={newComment.text}
-            onChange={handleChange}
-            required
-          />
-          <button className="comment-section-buttons">Submit</button>
-        </form>
+        <div className="comment-section-forms-container">
+          <hr className="comment-hr" />
+          <h1>New Comment</h1>
+          <form className="comment-section-forms" onSubmit={handleSubmitAdd}>
+            <textarea
+              type="text"
+              placeholder="Type your comment here..."
+              name="text"
+              value={newComment.text}
+              onChange={handleChange}
+              required
+            />
+            <button className="comment-section-buttons">Submit</button>
+          </form>
+        </div>
       )}
       {showEditForm && (
-        <form onSubmit={handleSubmitEdit}>
-          <input
-            type="text"
-            placeholder="Edit your comment"
-            name="text"
-            value={newComment.text}
-            onChange={handleChange}
-            required
-          />
-          <button className="comment-section-buttons">Submit</button>
-        </form>
+        <div className="comment-section-forms-container">
+          <hr className="comment-hr" />
+          <h1>Edit Your Comment</h1>
+          <form className="comment-section-forms" onSubmit={handleSubmitEdit}>
+            <textarea
+              type="text"
+              placeholder="Edit your comment..."
+              name="text"
+              value={newComment.text}
+              onChange={handleChange}
+              required
+            />
+            <button className="comment-section-buttons">Submit</button>
+          </form>
+        </div>
       )}
     </div>
   );
