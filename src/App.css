@@ -1,5 +1,14 @@
 @import './fonts.css';
 
-.App {
+/* .App {
   text-align: center;
+} */
+
+.App {
+  display: flex;
+  flex-direction: column;
+}
+
+.Appm > Routes {
+  flex: 1;
 }

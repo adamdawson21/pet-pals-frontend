@@ -1,19 +1,18 @@
 .Footer {
   display: flex;
-  align-items: flex-end;
   background-color: #00a6a6;
-  padding: 10px;
-  text-align: center;
-  bottom: 0;
+  padding: 20px;
   width: 100%;
-  height: 350px;
-  left: 0;
+  min-height: 350px;
   position: relative;
 }
+
 .social-icons {
   display: flex;
   gap: 15px;
-  align-items: flex-end;
+  position: absolute;
+  bottom: 10px;
+  left: 20px;
 }
 
 .social-icons a {
@@ -27,25 +26,20 @@
 }
 
 .footer-text {
-  margin-left: 460px;
   color: white;
-}
-
-.top-right {
   position: absolute;
-  top: 50;
-  right: 0;
+  bottom: 10px;
+  left: 200px; /* 여기는 .social-icons의 너비에 따라 조정할 수 있습니다. */
 }
 
 .badge-icons {
-  position: absolute;
-  top: 70px; /* Adjust the top position as needed */
-  right: 200px; /* Adjust the right position as needed */
   display: flex;
-  flex-direction: column;
-  gap: 10px;
-  align-items: center;
   flex-direction: row;
+  gap: 10px;
+  position: absolute;
+  right: 15%;
+  top: 50%;
+  transform: translate(50%, -50%);
 }
 
 .badge-icons img {
@@ -53,17 +47,20 @@
   height: 180px;
 }
 
-.badge-icons.top-right .badge:nth-child(2) img {
-  width: 110px; /* Adjust the width for the second badge (smaller) */
-  height: 110px; /* Adjust the height for the second badge (smaller) */
+.badge-icons .badge:nth-child(2) img {
+  width: 110px;
+  height: 110px;
+  margin-top: 35px;
 }
 
 .newsletter {
-  position: absolute;
-  bottom: 40%;
-  left: 230px;
-  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
   text-align: center;
+  position: absolute;
+  left: 15%;
+  top: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .newsletter h3 {
@@ -85,60 +82,3 @@
   padding: 10px 20px;
   cursor: pointer;
 }
-
-.top-right {
-  position: absolute;
-  top: 50;
-  right: 0;
-}
-
-.badge-icons {
-  position: absolute;
-  top: 2450px; /* Adjust the top position as needed */
-  right: 200px; /* Adjust the right position as needed */
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  align-items: center;
-  flex-direction: row;
-}
-
-.badge-icons img {
-  width: 180px;
-  height: 180px;
-}
-
-.badge-icons.top-right .badge:nth-child(2) img {
-  width: 110px; /* Adjust the width for the second badge (smaller) */
-  height: 110px; /* Adjust the height for the second badge (smaller) */
-}
-
-.newsletter {
-  position: absolute;
-  bottom: -235%;
-  left: 230px;
-  transform: translateX(-50%);
-  text-align: center;
-}
-
-.newsletter h3 {
-  color: white;
-  font-size: 20px;
-  margin-bottom: 10px;
-}
-
-.newsletter input[type='email'] {
-  width: 100%;
-  padding: 10px;
-  margin-bottom: 10px;
-}
-
-.newsletter button[type='submit'] {
-  background-color: #070707;
-  color: #fff;
-  border: none;
-  padding: 10px 20px;
-  cursor: pointer;
-}
-
-/* Add additional styling as needed */
