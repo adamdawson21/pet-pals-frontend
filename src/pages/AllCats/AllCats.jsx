@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { getCats } from '../../services/cats';
 import { PetPreview } from '../../components/PetPreview/PetPreview';
 import './AllCats.css';
+import CatHero from '../../components/CatHero/CatHero';
 
 const AllCats = () => {
   const [catBreeds, setCatBreeds] = useState([]);
@@ -21,8 +22,8 @@ const AllCats = () => {
 
   return (
     <div>
-      {/* <h1>All Cats</h1> */}
-      <div className='card-container'>
+      <CatHero />
+      <div className="card-container">
         {catBreeds.map((breed) => (
           <PetPreview key={breed.id} breed={breed} />
         ))}
