@@ -4,6 +4,7 @@
   grid-template-rows: repeat(2, 1fr);
   grid-column-gap: 20px;
   grid-row-gap: 40px;
+  margin-bottom: 12em;
 }
 
 .CatImg {
@@ -28,6 +29,7 @@
   display: flex;
   max-height: 200px;
   align-items: center;
+  margin-top: 12em;
 }
 
 .Text {
