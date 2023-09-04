@@ -15,6 +15,7 @@ import {
   LogoutIcon,
 } from '@heroicons/react/solid';
 import { signOut } from '../../services/users.js';
+import logo from '../../logo/pet-pals-website-favicon-color.png';
 
 function Navbar({ user, setUser }) {
   const navigate = useNavigate();
@@ -29,7 +30,10 @@ function Navbar({ user, setUser }) {
     <div className='App'>
       <nav className='nav-container'>
         <div className='header'>
-          <Link to='/'>PetPals</Link>
+          <Link to='/' className='flex items-center'>
+            PetPals
+            <img src={logo} alt='PetPals Logo' className='logo-image mr-2' />
+          </Link>
         </div>
         <ul className='nav-list'>
           <li>
@@ -48,65 +52,66 @@ function Navbar({ user, setUser }) {
             </Link>
           </li>
         </ul>
-        <div className="profile-icon"> 
+        <div className='profile-icon'>
           <Menu>
             <MenuHandler>
               <UserIcon className='h-6 w-6 cursor-pointer' />
             </MenuHandler>
-            <div className="drop-down">
+            <div className='drop-down'>
               <MenuList>
-              <MenuItem className="flex items-center gap-2">
-                <Link to={user ? "/profile" : "/signin"} className="flex items-center"> 
-                  <UserIcon className="h-4 w-4 text-gray-500 mr-2" /> 
-                  <Typography variant="small" className="font-normal">  
-
-                    My Profile
-                  </Typography>
-                </Link>
-              </MenuItem>
-              <MenuItem className='flex items-center gap-2'>
-                <Link
-                  to={user ? '/comments' : '/signin'}
-                  className='flex items-center'
-                >
-                  <ChatIcon className='h-4 w-4 text-gray-500 mr-2' />
-                  <Typography variant='small' className='font-normal'>
-                    My Comments
-                  </Typography>
-                </Link>
-              </MenuItem>
-              <MenuItem className='flex items-center gap-2'>
-                <Link to='/signup' className='flex items-center'>
-                  <PencilIcon className='h-4 w-4 text-gray-500 mr-2' />
-                  <Typography variant='small' className='font-normal'>
-                    Sign Up
-                  </Typography>
-                </Link>
-              </MenuItem>
-              <hr className='my-2 border-blue-gray-50' />
-              <MenuItem className='flex items-center gap-2 '>
-                {user ? (
-                  <button
-                    onClick={handleClick}
-                    className='flex items-center text-red-500'
+                <MenuItem className='flex items-center gap-2'>
+                  <Link
+                    to={user ? '/profile' : '/signin'}
+                    className='flex items-center'
                   >
-                    <LogoutIcon className='h-4 w-4 text-gray-500 mr-2' />
+                    <UserIcon className='h-4 w-4 text-gray-500 mr-2' />
                     <Typography variant='small' className='font-normal'>
-                      Sign Out
-                    </Typography>
-                  </button>
-                ) : (
-                  <Link to='/signin' className='flex items-center'>
-                    <LogoutIcon className='h-4 w-4 text-gray-500 mr-2' />
-                    <Typography variant='small' className='font-normal'>
-                      Sign In
+                      My Profile
                     </Typography>
                   </Link>
-                )}
-              </MenuItem>
-            </MenuList>
+                </MenuItem>
+                <MenuItem className='flex items-center gap-2'>
+                  <Link
+                    to={user ? '/comments' : '/signin'}
+                    className='flex items-center'
+                  >
+                    <ChatIcon className='h-4 w-4 text-gray-500 mr-2' />
+                    <Typography variant='small' className='font-normal'>
+                      My Comments
+                    </Typography>
+                  </Link>
+                </MenuItem>
+                <MenuItem className='flex items-center gap-2'>
+                  <Link to='/signup' className='flex items-center'>
+                    <PencilIcon className='h-4 w-4 text-gray-500 mr-2' />
+                    <Typography variant='small' className='font-normal'>
+                      Sign Up
+                    </Typography>
+                  </Link>
+                </MenuItem>
+                <hr className='my-2 border-blue-gray-50' />
+                <MenuItem className='flex items-center gap-2 '>
+                  {user ? (
+                    <button
+                      onClick={handleClick}
+                      className='flex items-center text-red-500'
+                    >
+                      <LogoutIcon className='h-4 w-4 text-gray-500 mr-2' />
+                      <Typography variant='small' className='font-normal'>
+                        Sign Out
+                      </Typography>
+                    </button>
+                  ) : (
+                    <Link to='/signin' className='flex items-center'>
+                      <LogoutIcon className='h-4 w-4 text-gray-500 mr-2' />
+                      <Typography variant='small' className='font-normal'>
+                        Sign In
+                      </Typography>
+                    </Link>
+                  )}
+                </MenuItem>
+              </MenuList>
             </div>
-            
           </Menu>
         </div>
       </nav>
