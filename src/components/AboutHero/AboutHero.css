@@ -9,7 +9,7 @@
   width: 100vw;
   height: 50vh;
   object-position: contain;
-  object-fit: contain;
+  object-fit: cover;
 }
 
 .overlay {
