@@ -15,6 +15,7 @@ import {
   LogoutIcon,
 } from '@heroicons/react/solid';
 import { signOut } from '../../services/users.js';
+import logo from '../../logo/pet-pals-website-favicon-color.png';
 
 function Navbar({ user, setUser }) {
   const navigate = useNavigate();
@@ -29,7 +30,10 @@ function Navbar({ user, setUser }) {
     <div className='App'>
       <nav className='nav-container'>
         <div className='header'>
-          <Link to='/'>PetPals</Link>
+          <Link to='/' className='flex items-center'>
+            PetPals
+            <img src={logo} alt='PetPals Logo' className='logo-image mr-2' />
+          </Link>
         </div>
         <ul className='nav-list'>
           <li>
