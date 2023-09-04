@@ -31,7 +31,7 @@ function Navbar({ user, setUser }) {
       <nav className='nav-container'>
         <div className='header'>
           <Link to='/' className='flex items-center'>
-            PetPals
+            PET PALS
             <img src={logo} alt='PetPals Logo' className='logo-image mr-2' />
           </Link>
         </div>
