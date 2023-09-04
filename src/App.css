@@ -1,9 +1,5 @@
 @import './fonts.css';
 
-/* .App {
-  text-align: center;
-} */
-
 .App {
   display: flex;
   flex-direction: column;

@@ -29,7 +29,7 @@
   color: white;
   position: absolute;
   bottom: 10px;
-  left: 200px; /* 여기는 .social-icons의 너비에 따라 조정할 수 있습니다. */
+  left: 200px;
 }
 
 .badge-icons {
