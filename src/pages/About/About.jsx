@@ -6,10 +6,11 @@ export default function About() {
     
     <div className="about">
       <AboutHero />
+      <div className="about-text">
 
-      <h1 className="h1">Our Mission</h1>
+        <h1 className="h1">Our Mission</h1>
 
-      <p>
+        <p>
         At PetPals, our mission is to provide a compassionate and innovative platform that bridges the  gap between furry companions in need and the loving families they deserve.
         <br /><br />
 
@@ -17,15 +18,15 @@ export default function About() {
         <br /><br />
 
         Join us in shaping a brighter future, one adoption story at a time.
-      </p>
-      <br /><br />
+        </p>
+        <br /><br />
 
-      <hr />
-      <br /><br />
-      
-      <h1 className="h1">Get Involved</h1>
+        <hr />
+        <br /><br />
 
-      <p>
+        <h1 className="h1">Get Involved</h1>
+
+        <p>
         There are many ways to get involved with PetPals. Whether you are looking to adopt, volunteer, or donate, we are always happy to welcome new members to our community.
         <br /><br />
 
@@ -33,8 +34,8 @@ export default function About() {
         <br /><br />
 
         Ready to make a difference? Contact us today to learn more about our volunteer opportunities and how you can become part of our dedicated team.
-      </p>
-
+        </p>
+      </div>
     </div>
   );
 }
