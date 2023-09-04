@@ -49,7 +49,7 @@ export default function About() {
         Ready to make a difference? Contact us at info@petpals.netflify.com or
         visit petpals.netlify.com to learn more about our volunteer
         opportunities and how you can become part of our dedicated team.
-      </p>
+      </p> 
     </div>
   );
 }

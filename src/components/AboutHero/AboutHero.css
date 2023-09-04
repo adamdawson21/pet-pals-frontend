@@ -1,36 +1,25 @@
+.container {
+  align-items: center;
+  justify-content: center;
+  margin-top: 5rem;
+  position: relative;
+}
+
 .aboutus-image {
   width: 100vw;
   height: 50vh;
-  object-position: center;
+  object-position: contain;
   object-fit: contain;
-  margin-top: 80px;
-}
-
-.container {
-  position: relative;
 }
 
 .overlay {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  height: 50vh;
   background-color: rgba(0, 0, 0, 0.5);
   align-items: center;
   justify-content: center;
-}
-
-.overlay-text {
-  color: white;
-  font-size: 5rem;
-  text-align: center;
-  margin-top: 120px;
-  font-family: 'Amatic SC', cursive; 
-}
-
-.overlay-sm-text {
-  color: white;
-  font-size: 1rem;
-  font-family: 'Montserrat', sans-serif;
+  box-sizing: border-box;
 }
