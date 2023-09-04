@@ -36,6 +36,28 @@ const Footer = () => {
       <div className='footer-text'>
         &copy; {new Date().getFullYear()} PetPals. All rights reserved.
       </div>
+      <div className='badge-icons top-right'>
+        {/* Add fake badges and awards icons here */}
+       <span className='badge'>
+          <img src='https://png.pngtree.com/png-vector/20221005/ourmid/pngtree-number-1-golden-ribbon-badge-design-png-image_6278756.png' alt='Gold Badge'/>
+        </span>
+        <span className='badge'>
+      <img src='https://freepngimg.com/save/26978-award-clipart/420x420' alt='New Badge' />
+    </span>
+      </div>
+          
+      <div className='newsletter'>
+      <h3>Subscribe to Our Newsletter</h3>
+      <form>
+        <input
+          type='email'
+          placeholder='Enter your email'
+          name='email'
+          required
+        />
+        <button type='submit'>Subscribe</button>
+      </form>
+      </div>
     </footer>
   );
 };

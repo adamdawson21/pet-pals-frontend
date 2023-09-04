@@ -1,4 +1,4 @@
-import api from './apiConfig';
+import { api, apiLikes } from "./apiConfig";
 
 export const getDogs = async () => {
   try {
@@ -9,9 +9,9 @@ export const getDogs = async () => {
   }
 };
 
-export const getDog = async (id) => {
+export const deleteLikedPost = async (id) => {
   try {
-    const response = await api.get(`/post/${id}`);
+    const response = await apiLikes.delete(`/like/${id}`);
     return response.data;
   } catch (error) {
     throw error;

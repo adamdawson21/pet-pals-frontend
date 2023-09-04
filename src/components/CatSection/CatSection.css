@@ -1,0 +1,41 @@
+.cat-parent {
+  display: flex;
+  flex-direction: row;
+}
+
+.cat-column {
+  flex: 1;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.Text {
+  font-size: 18px;
+  font-family: Montesserat;
+  color: #333;
+  text-align: center;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.img {
+  max-width: 100%;
+  height: auto;
+}
+
+.button {
+  margin-top: 20px;
+  color: white;
+  background-color: rgb(24, 47, 92);
+  border-radius: none;
+  padding: 0px 30px;
+  transition: background-color 0.3s;
+  font-family: 'Amatic SC', cursive;  
+  font-size: 30px;
+}
+
+.button:hover {
+  background-color: rgb(252, 177, 64);
+}

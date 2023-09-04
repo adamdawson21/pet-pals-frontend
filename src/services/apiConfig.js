@@ -6,8 +6,14 @@ const getToken = () => {
   });
 };
 
-const api = axios.create({
-  baseURL: "https://pet-pals-5f9adeeaa392.herokuapp.com/"
+const getTokenLikes = () => {
+  return new Promise((resolve) => {
+    resolve(`Token ${localStorage.getItem("token") || null}`);
+  });
+};
+
+export const api = axios.create({
+  baseURL: "https://pet-pals-5f9adeeaa392.herokuapp.com/",
 });
 
 api.interceptors.request.use(
@@ -21,4 +27,19 @@ api.interceptors.request.use(
   }
 );
 
-export default api;
+export const apiLikes = axios.create({
+  baseURL: "https://pet-pals-5f9adeeaa392.herokuapp.com/",
+});
+
+apiLikes.interceptors.request.use(
+  async (config) => {
+    config.headers["Authorization"] = await getTokenLikes();
+    return config;
+  },
+  function (error) {
+    console.log("Request error: ", error);
+    return Promise.reject(error);
+  }
+);
+
+// export default api;

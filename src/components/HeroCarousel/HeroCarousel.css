@@ -2,6 +2,7 @@
   display: flexbox;
   height: 80vh;
   overflow: hidden;
+  margin-top: 80px;
 }
 
 .Image {
