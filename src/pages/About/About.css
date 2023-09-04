@@ -1,4 +1,4 @@
-.about{
+.about {
   background-color: #fff;
   padding: 20px;
   /* border-radius: 5px; */
@@ -17,4 +17,10 @@
   /* text-shadow: 0 0 10px rgba(0,0,0,0.2); */
   text-decoration: none;
   transition: all 0.3s ease-in-out;
+  margin-top: 100px;
+}
+
+.about-image {
+  display: block;
+  margin: 0 auto;
 }

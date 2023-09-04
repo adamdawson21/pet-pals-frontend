@@ -1,15 +1,15 @@
 .Footer {
   display: flex;
   align-items: flex-end;
-  background-color: #f0f0f0;
+  background-color: #00a6a6;
   padding: 10px;
   text-align: center;
   bottom: 0;
   width: 100%;
   height: 350px;
   left: 0;
+  position: relative;
 }
-
 .social-icons {
   display: flex;
   gap: 15px;
@@ -17,15 +17,71 @@
 }
 
 .social-icons a {
-  color: #333;
+  color: #fcf9f9;
   transition: color 0.2s;
   font-size: 24px;
 }
 
 .social-icons a:hover {
-  color: #007bff;
+  color: #b559d3;
 }
 
 .footer-text {
   margin-left: 460px;
+  color: white;
+}
+
+.top-right {
+  position: absolute;
+  top: 50;
+  right: 0;
+}
+
+.badge-icons {
+  position: absolute;
+  top: 70px; /* Adjust the top position as needed */
+  right: 200px; /* Adjust the right position as needed */
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+  flex-direction: row;
+}
+
+.badge-icons img {
+  width: 180px;
+  height: 180px;
+}
+
+.badge-icons.top-right .badge:nth-child(2) img {
+  width: 110px; /* Adjust the width for the second badge (smaller) */
+  height: 110px; /* Adjust the height for the second badge (smaller) */
+}
+
+.newsletter {
+  position: absolute;
+  bottom: 40%;
+  left: 230px;
+  transform: translateX(-50%);
+  text-align: center;
+}
+
+.newsletter h3 {
+  color: white;
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.newsletter input[type='email'] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.newsletter button[type='submit'] {
+  background-color: #070707;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
 }
