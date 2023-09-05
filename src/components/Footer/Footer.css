@@ -3,7 +3,7 @@
   background-color: #471aa0;
   padding: 20px;
   width: 100%;
-  min-height: 350px;
+  min-height: 250px;
   position: relative;
 }
 
@@ -82,6 +82,7 @@
   padding: 10px 20px;
   cursor: pointer;
   transition: background-color 0.3s;
+  margin-bottom: 40px;
 }
 
 .newsletter button:hover{
