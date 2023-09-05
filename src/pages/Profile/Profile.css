@@ -9,7 +9,7 @@
   margin-bottom: 20px;
   text-align: left;
   font-family: "Amatic SC";
-  font-weight:700;
+  font-weight: 700;
 }
 
 .user-favorites {
@@ -34,8 +34,8 @@
   margin-left: 20px;
   text-align: left;
   display: flex;
-  flex-direction: column; /* Stack text vertically */
-  align-items: flex-start; /* Align text to the left */
+  flex-direction: column;
+  align-items: flex-start;
 }
 
 .image-info p {
@@ -63,16 +63,16 @@
 }
 
 .user-avatar img {
-  width: 150px;  /* Adjust the width to make the icon smaller */
-  height: 150px; /* Adjust the height to maintain the aspect ratio */
+  width: 150px;
+  height: 150px;
   border-radius: 50%;
   object-fit: cover;
   margin-right: 15px;
 }
 
 .user-info {
-  display: flex; /* Use flexbox to arrange items horizontally */
-  align-items: center; /* Align items vertically within the container */
+  display: flex;
+  align-items: center;
   margin-bottom: 20px;
 }
 
@@ -85,8 +85,8 @@
 }
 
 .user-details {
-  display: flex; /* Use flexbox to arrange items horizontally */
-  flex-direction: column; /* Stack items vertically within this container */
+  display: flex;
+  flex-direction: column;
   text-align: left;
 }
 
@@ -96,12 +96,10 @@
   color: #0d0d0d;
 }
 
-.no-favorites-message{
+.no-favorites-message {
   font-family: "Amatic SC";
   color: #471AA0;
   font-size: 30px;
   margin: 60px 0 70px 0;
   letter-spacing: 1px;
 }
-
-/* Additional styling can be added for other elements */
