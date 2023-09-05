@@ -96,5 +96,12 @@
   color: #0d0d0d;
 }
 
+.no-favorites-message{
+  font-family: "Amatic SC";
+  color: #471AA0;
+  font-size: 30px;
+  margin: 60px 0 70px 0;
+  letter-spacing: 1px;
+}
 
 /* Additional styling can be added for other elements */
