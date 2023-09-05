@@ -1,19 +1,19 @@
 import React from 'react';
 import "./AboutHero.css";
 
-export default function AboutHero() {
+function AboutHero() {
   return (
-    <div className="container">
+    <div className="hero-container">
       <img
-        className="aboutus-image"
+        className="about-image"
         src="https://imgur.com/1GM1mzR.jpg"
-        alt="Dogs at a shelter with people in the background"
-        text="About Us"
+        alt="about us"
       />
-        <div className="overlay">
-          <h1 className="overlay-text">About Us</h1>
-        </div>
+      <div className="overlay">
+        <h1 className="overlay-text">About Us</h1>
+      </div>
     </div>
   );
 }
 
+export default AboutHero;
