@@ -58,7 +58,7 @@ function Navbar({ user, setUser }) {
               <UserIcon className='h-6 w-6 cursor-pointer' />
             </MenuHandler>
             <div className='drop-down'>
-              <MenuList>
+              <MenuList className="mt-5">
                 <MenuItem className='flex items-center gap-2'>
                   <Link
                     to={user ? '/profile' : '/signin'}
@@ -70,17 +70,7 @@ function Navbar({ user, setUser }) {
                     </Typography>
                   </Link>
                 </MenuItem>
-                <MenuItem className='flex items-center gap-2'>
-                  <Link
-                    to={user ? '/comments' : '/signin'}
-                    className='flex items-center'
-                  >
-                    <ChatIcon className='h-4 w-4 text-gray-500 mr-2' />
-                    <Typography variant='small' className='font-normal'>
-                      My Comments
-                    </Typography>
-                  </Link>
-                </MenuItem>
+          
                 <MenuItem className='flex items-center gap-2'>
                   <Link to='/signup' className='flex items-center'>
                     <PencilIcon className='h-4 w-4 text-gray-500 mr-2' />

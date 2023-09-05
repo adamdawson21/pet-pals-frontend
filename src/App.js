@@ -13,6 +13,7 @@ import { useState } from "react";
 import { verifyUser } from "./services/users";
 import { useEffect } from "react";
 import "./App.css";
+import ScrollToTopNavigation from "./components/ScrollToTop/ScrollToTop";
 
 export default function App() {
   const [user, setUser] = useState(null);
@@ -28,7 +29,8 @@ export default function App() {
   return (
     <div className="App">
       <PetNavbar user={user} setUser={setUser} />
-      <Routes>
+      <ScrollToTopNavigation />
+      <Routes >
         <Route path="/" element={<Home user={user} />} />
         <Route path="/about" element={<About user={user} />} />
         <Route path="/allcats" element={<AllCats user={user} />} />

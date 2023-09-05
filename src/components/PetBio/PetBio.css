@@ -4,7 +4,8 @@
   align-items: center;
   justify-content: center;
   width: 80%;
-  margin: 5rem auto;
+  margin: 6rem ;
+  gap: 2rem;
 }
 
 .pet-info-column {
@@ -21,9 +22,16 @@
 }
 
 .pet-bio-container h1 {
-  font-size: 2rem;
+  font-size: 5rem;
+  font-family: 'Amatic SC', cursive;
 }
 
 span {
   font-weight: bold;
+}
+
+.pet-bio-div-img{
+  max-height: 500px;
+  max-width: 500px;
+  object-fit: cover;
 }

@@ -33,7 +33,7 @@ const UserProfile = ({ user }) => {
     const loggedUser = users.filter((userObj) => userObj.id === id);
     setLoggedUser(loggedUser);
     // Update the favorites state with the loggedUser
-    setLikes(loggedUser[0].likes);
+    setLikes(loggedUser[0]?.likes);
   };
 
   useEffect(() => {
@@ -47,7 +47,7 @@ const UserProfile = ({ user }) => {
       setFavorites(likedPosts);
     };
 
-    if (likes.length > 0) {
+    if (likes?.length > 0) {
       fetchLikedPosts();
     }
   }, [likes]);
@@ -73,24 +73,12 @@ const UserProfile = ({ user }) => {
       }
     } catch (error) {
       console.error('Error deleting liked post:', error);
-      // Handle the error here, e.g., display an error message to the user
     }
   };
 
   return (
     <div className='user-profile'>
       <h1>Welcome, {user?.username}!</h1>
-      <div className='user-info'>
-        <div className='user-avatar'>
-          <img
-            src='https://h-o-m-e.org/wp-content/uploads/2022/04/Blank-Profile-Picture-3.jpg'
-            alt='Profile'
-          />
-        </div>
-        <div className='user-details'>
-          <p> Name:{users.first_name}</p>
-        </div>
-      </div>
       <div className='user-favorites'>
         <h1>Favorite Pals</h1>
         <div className='favorite-images'>
