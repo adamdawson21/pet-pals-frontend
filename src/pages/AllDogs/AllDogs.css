@@ -34,3 +34,12 @@
   margin: 20px 0;
   margin-left: 20px;
 }
+
+@media screen and (max-width:480px) {
+  .card-container {
+    flex-direction: column;
+  }
+  .custom-card {
+    width: 100%;
+  }
+}
