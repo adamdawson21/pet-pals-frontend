@@ -152,17 +152,17 @@
 
   .comment-edit-button {
     margin-top: 50px;
-    font-size: 20px;
+    font-size: 19px;
   }
 
   .comment-add-button {
-    font-size: 20px;
+    font-size: 19px;
     width: 77%;
     margin-right: 6px;
   }
 
   .comment-text {
-    font-size: 25px;
+    font-size: 20px;
   }
 
   .comment-header * {
