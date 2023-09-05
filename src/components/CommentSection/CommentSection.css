@@ -137,3 +137,9 @@
   background-color: #ff0000;
   border: solid #ff0000;
 }
+
+@media screen and (max-width: 480px) {
+  .comment-section-container {
+    margin: 0 60px;
+  }
+}
