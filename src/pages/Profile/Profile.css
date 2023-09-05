@@ -1,12 +1,15 @@
 .user-profile {
   text-align: center;
   padding: 20px;
+  margin-top: 5rem;
 }
 
 .user-profile h1 {
   font-size: 50px;
   margin-bottom: 20px;
   text-align: left;
+  font-family: "Amatic SC";
+  font-weight:700;
 }
 
 .user-favorites {

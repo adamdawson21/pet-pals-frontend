@@ -51,7 +51,7 @@ export default function PetBio({ user }) {
   return (
     <div className="pet-bio-container">
       <div className="pet-bio-image>">
-        <img src={pet.image} alt={pet.breed} />
+        <img className="pet-bio-div-img" src={pet.image} alt={pet.breed} />
       </div>
 
       <div className="pet-info-column">
