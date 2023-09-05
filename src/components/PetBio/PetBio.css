@@ -35,3 +35,12 @@ span {
   max-width: 500px;
   object-fit: cover;
 }
+
+.button {
+  background-color: #471aa0;
+  height: 50px;
+}
+
+.add-button {
+  width: 200px;
+}
