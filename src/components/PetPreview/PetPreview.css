@@ -5,6 +5,42 @@
   margin-top: 85px;
 }
 
-.card {
+.custom-card {
   width: calc(25% - 20px);
+  border-radius: 0;
+  overflow: hidden;
+}
+
+.card-img {
+  width: 100%;
+  height: 40vh;
+  object-fit: cover;
+}
+
+.card-content {
+  padding: 20px;
+  background-color: #f6f6f6;
+}
+
+.card-text {
+  margin-bottom: 10px;
+}
+
+.preview-button {
+  background-color: rgb(24, 47, 92);
+  color: #fff;
+  padding: 15px 0;
+  width: 150px;
+  cursor: pointer;
+}
+
+.preview-button:hover {
+  background-color: rgb(252, 177, 64);
+  color: rgb(24, 47, 92);
+}
+
+.bold {
+  color: #5881ba;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 30px;
 }
