@@ -4,8 +4,8 @@
 }
 
 .comment-section-header {
-  font-weight: bold;
-  font-size: 40px;
+  /* font-weight: bold; */
+  font-size: 60px;
   font-family: "Amatic SC";
 }
 
@@ -38,13 +38,13 @@
 .comment-user {
   align-self: flex-start;
   font-weight: bold;
-  font-size: 25px;
+  font-size: 35px;
   letter-spacing: 2px;
 }
 
 .comment-date {
   font-weight: bold;
-  font-size: 25px;
+  font-size: 35px;
   letter-spacing: 1px;
 }
 
@@ -58,6 +58,7 @@
 .comment-text {
   margin: 20px 0;
   font-family: Montserrat;
+  font-size: 19px;
   color: #471aa0;
 }
 
