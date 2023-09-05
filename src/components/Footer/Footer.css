@@ -22,7 +22,7 @@
 }
 
 .social-icons a:hover {
-  color:#ffe033;
+  color: #ffe033;
 }
 
 .footer-text {
@@ -85,6 +85,31 @@
   margin-bottom: 40px;
 }
 
-.newsletter button:hover{
+.newsletter button:hover {
   background-color: #ffe033;
+}
+
+@media screen and (max-width: 480px) {
+  .badge-icons {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .badge-icons img {
+    width: 100px;
+    height: 100px;
+  }
+
+  .badge-icons .badge:nth-child(2) img {
+    width: 80px;
+    height: 80px;
+    margin-top: 10px;
+  }
+
+  .newsletter {
+    left: 10%;
+    width: 50%;
+    transform: translate(0, -50%);
+  }
 }

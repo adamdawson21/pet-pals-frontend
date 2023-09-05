@@ -4,8 +4,8 @@
 }
 
 .comment-section-header {
-  font-weight: bold;
-  font-size: 40px;
+  /* font-weight: bold; */
+  font-size: 60px;
   font-family: "Amatic SC";
 }
 
@@ -38,16 +38,14 @@
 .comment-user {
   align-self: flex-start;
   font-weight: bold;
-  font-size: 25px;
+  font-size: 35px;
   letter-spacing: 2px;
-  /* color: #0056b3; */
 }
 
 .comment-date {
   font-weight: bold;
-  font-size: 25px;
+  font-size: 35px;
   letter-spacing: 1px;
-  /* color: #000080; */
 }
 
 .comment-hr {
@@ -60,6 +58,7 @@
 .comment-text {
   margin: 20px 0;
   font-family: Montserrat;
+  font-size: 19px;
   color: #471aa0;
 }
 
@@ -71,7 +70,6 @@
 }
 
 .comment-section-buttons:hover {
-  /* color: #FFFFFF; */
   background-color: #ffe033;
   border: solid #ffe033;
 }
@@ -138,4 +136,38 @@
 .comment-cancel-button:hover {
   background-color: #ff0000;
   border: solid #ff0000;
+}
+
+@media screen and (max-width: 480px) {
+  .comment-section-container {
+    margin: 0;
+  }
+
+  .comment-section-buttons {
+    width: 80%;
+    height: 50px;
+  }
+
+  .comment-text {
+    max-width: 80%;
+  }
+
+  .comment-edit-button {
+    margin-top: 50px;
+    font-size: 19px;
+  }
+
+  .comment-add-button {
+    font-size: 19px;
+    width: 77%;
+    margin-right: 6px;
+  }
+
+  .comment-text {
+    font-size: 20px;
+  }
+
+  .comment-header * {
+    font-size: 35px;
+  }
 }
