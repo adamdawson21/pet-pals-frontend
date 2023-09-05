@@ -31,6 +31,7 @@
   display: flex;
   justify-content: space-between;
   font-family: "Amatic SC";
+  color: #471aa0;
 }
 
 .comment-user {
@@ -38,38 +39,40 @@
   font-weight: bold;
   font-size: 25px;
   letter-spacing: 2px;
-  color: #0056b3;
+  /* color: #0056b3; */
 }
 
 .comment-date {
   font-weight: bold;
   font-size: 25px;
   letter-spacing: 1px;
-  color: #000080;
+  /* color: #000080; */
 }
 
 .comment-hr {
   width: 95%;
   height: 2px;
-  background-color: #89baef;
+  background-color: #ffe033;
   margin: 5px 0;
 }
 
 .comment-text {
   margin: 20px 0;
   font-family: Montserrat;
-  color: #000080;
+  color: #471aa0;
 }
 
 .comment-section-buttons {
-  border: solid #0056b3;
+  border: solid #471aa0;
   width: 100px;
   font-family: Montserrat;
-  color: #000080;
+  color: #471aa0;
 }
 
 .comment-section-buttons:hover {
-  color: #FFFFFF;
+  /* color: #FFFFFF; */
+  background-color: #ffe033;
+  border: solid #ffe033;
 }
 
 .comment-edit-button {
@@ -115,10 +118,10 @@
 .comment-section-forms textarea {
   width: 80%;
   height: 100px;
-  border: solid #0056b3;
+  border: solid #471aa0;
   border-radius: 5px;
   font-family: Montserrat;
-  color: #000080;
+  color: #471aa0;
 }
 
 .comment-section-forms textarea::placeholder {

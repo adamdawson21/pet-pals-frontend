@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { getUsers, addComment, editComment } from "../../services/users";
+import { useNavigate } from "react-router-dom";
 import "./CommentSection.css";
 
 export default function CommentSection({ comments, postId, user, setToggle }) {
@@ -11,6 +12,7 @@ export default function CommentSection({ comments, postId, user, setToggle }) {
   });
   const [showEditForm, setShowEditForm] = useState(false);
   const [showAddForm, setShowAddForm] = useState(false);
+  const navigate = useNavigate();
 
   useEffect(() => {
     async function fetchUsers() {
@@ -78,6 +80,7 @@ export default function CommentSection({ comments, postId, user, setToggle }) {
   };
 
   const handleAddComment = (e) => {
+    if (!user) navigate("/signin");
     if (newComment.id) delete newComment.id;
 
     setShowAddForm(true);
