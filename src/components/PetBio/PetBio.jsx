@@ -79,11 +79,11 @@ export default function PetBio({ user }) {
             </Link>
           ) : (
             <Link to={"/allCats"}>
-              <Button>Back</Button>
+              <button className="button">Back</button>
             </Link>
           )}
-          <Button onClick={handleLikeToFav}>Add to Favorites</Button>
-          <Button onClick={emailButton}>Adopt Me!</Button>
+          <button className="button add-button" onClick={handleLikeToFav}>Add to Favorites</button>
+          <button className="button" onClick={emailButton}>Adopt Me!</button>
         </div>
       </div>
       <ToastContainer />

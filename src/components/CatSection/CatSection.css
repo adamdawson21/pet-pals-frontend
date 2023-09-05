@@ -28,7 +28,7 @@
 .button {
   margin-top: 20px;
   color: white;
-  background-color: rgb(24, 47, 92);
+  background-color: #471aa0;
   border-radius: none;
   padding: 0px 30px;
   transition: background-color 0.3s;
@@ -37,5 +37,7 @@
 }
 
 .button:hover {
-  background-color: rgb(252, 177, 64);
+  background-color: #ffe033;;
+  color: #471aa0;
+  font-weight: bolder;
 }
