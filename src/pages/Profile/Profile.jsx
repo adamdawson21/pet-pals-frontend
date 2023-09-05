@@ -30,7 +30,7 @@ const UserProfile = ({ user }) => {
   };
 
   const getLoggedUser = (id) => {
-    const loggedUser = users.filter((userObj) => userObj.id === id);
+    const loggedUser = users.filter((userObj) => userObj.id == id);
     setLoggedUser(loggedUser);
     // Update the favorites state with the loggedUser
     setLikes(loggedUser[0]?.likes);

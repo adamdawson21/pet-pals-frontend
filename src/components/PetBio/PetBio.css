@@ -36,6 +36,15 @@ span {
   object-fit: cover;
 }
 
+.button {
+  background-color: #471aa0;
+  height: 50px;
+}
+
+.add-button {
+  width: 200px;
+}
+
 @media screen and (max-width: 480px) {
   .pet-bio-container {
     grid-template-columns: 1fr;

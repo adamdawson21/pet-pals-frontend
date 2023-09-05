@@ -28,20 +28,21 @@
 }
 
 .preview-button {
-  background-color: rgb(24, 47, 92);
-  color: #fff;
+  background-color: #471aa0;
+  color: white;
   padding: 15px 0;
   width: 150px;
   cursor: pointer;
+  transition: background-color 0.3s;
 }
 
 .preview-button:hover {
-  background-color: rgb(252, 177, 64);
-  color: rgb(24, 47, 92);
+  background-color: #ffe033;
+  color: #471aa0;
 }
 
 .bold {
-  color: #5881ba;
+  color: #705c96;
   font-family: 'Montserrat', sans-serif;
   font-size: 30px;
 }

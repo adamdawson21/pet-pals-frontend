@@ -22,7 +22,7 @@
 }
 
 .social-icons a:hover {
-  color: #b559d3;
+  color: #ffe033;
 }
 
 .footer-text {
@@ -76,11 +76,16 @@
 }
 
 .newsletter button[type='submit'] {
-  background-color: #070707;
-  color: #fff;
+  background-color: white;
+  color: #471aa0;
   border: none;
   padding: 10px 20px;
   cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.newsletter button:hover {
+  background-color: #ffe033;
 }
 
 @media screen and (max-width: 480px) {
