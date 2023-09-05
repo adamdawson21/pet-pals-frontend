@@ -1,70 +1,99 @@
-# Getting Started with Create React App
+# 🐕 PetPals 🐈
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Table of Contents
 
-## Available Scripts
+- [Introduction](#introduction)
+- [Features](#features)
+- [Front-end Technologies Used](#front-end-technologies-used)
+- [Back-end Technologies Used](#back-end-technologies-used)
+- [Getting Started](#getting-started)
+- [Usage](#usage)
+- [Contributing](#contributing)
+- [License](#license)
 
-In the project directory, you can run:
+## Introduction
 
-### `npm start`
+Welcome to PetPals! Our platform is designed to help you explore a wide variety of cats and dogs that are looking for their forever homes. Whether you're a prospective pet parent or simply an animal enthusiast, this website provides a user-friendly interface to discover, favorite, and add personal comments for each pet available for adoption.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Features
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### 1. Explore Pets
 
-### `npm test`
+- Browse through an extensive catalog of cats and dogs available for adoption.
+- Filter pets by gender and age to find your perfect match.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### 2. Favorite Pets
 
-### `npm run build`
+- Create a list of your favorite pets to easily keep track of the ones you are interested in.
+- Access your favorites list anytime to view and manage your selections.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### 3. Add Personal Comments
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- Inside a pet's profile, click the "Add Comment" button to leave personal notes.
+- Your comments will be saved and displayed on the pet's profile for your reference.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### 4. User Profiles
 
-### `npm run eject`
+- Create and edit your user profile from the user dashboard.
+- Upload a profile picture and share information about your pets.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Front-end Technologies Used
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+The front-end of the Pet Adoption Website was developed using the following technologies and libraries:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+- CSS-Vanilla and Tailwinds
+- JavaScript
+- React.js: A JavaScript library for building user interfaces.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## Back-end Technologies Used
 
-## Learn More
+The back-end of the Pet Adoption Website was developed using the following technologies and frameworks:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- Django: A high-level Python web framework for building web applications.
+- Python: A versatile programming language used for server-side logic and application development.
+- PostgreSQL: A powerful open-source relational database system for storing pet and user data.
+- Django REST framework: A toolkit for building Web APIs in Django.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Getting Started
 
-### Code Splitting
+To get started with the Pet Adoption Website, follow these steps:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+1. Clone the Repository:
 
-### Analyzing the Bundle Size
+```bash
+   git clone https://github.com/adamdawson21/pet-pals-frontend
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+2. Install Dependencies:
 
-### Making a Progressive Web App
+```bash
+   cd pet-adoption-website
+   npm install
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+3. Configure the Database:
 
-### Advanced Configuration
+- Set up a database using your preferred database management system (e.g., MySQL, PostgreSQL).
+- Update the database configuration in `config/database.js`.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+4. Environment Variables:
 
-### Deployment
+- Create a `.env` file based on the provided `.env.example` and configure the necessary environment variables.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+5. Start the Application:
 
-### `npm run build` fails to minify
+```bash
+   npm start
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Contributing
+
+We welcome contributions from the community to enhance and improve this pet adoption website. To contribute, please follow these guidelines:
+
+1. Fork the repository and create a new branch for your feature or bug fix.
+2. Make your changes, ensuring code quality and adherence to coding standards.
+3. Create a pull request with a clear description of your changes.
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
