@@ -25,11 +25,11 @@ const SignUp = (props) => {
 
   const onSignUp = async (event) => {
     event.preventDefault()
-    const { setUser } = props
     try {
-      const user = await signUp(form)
-      setUser(user)
-      navigate('/')
+      const token = await signUp(form)
+      if (token) {
+        navigate('/signin')
+      }
     } catch (error) {
       console.error(error)
       setForm({

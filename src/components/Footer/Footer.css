@@ -3,7 +3,7 @@
   background-color: #471aa0;
   padding: 20px;
   width: 100%;
-  min-height: 350px;
+  min-height: 250px;
   position: relative;
 }
 
@@ -22,7 +22,7 @@
 }
 
 .social-icons a:hover {
-  color: #b559d3;
+  color: #ffe033;
 }
 
 .footer-text {
@@ -76,9 +76,40 @@
 }
 
 .newsletter button[type='submit'] {
-  background-color: #070707;
-  color: #fff;
+  background-color: white;
+  color: #471aa0;
   border: none;
   padding: 10px 20px;
   cursor: pointer;
+  transition: background-color 0.3s;
+  margin-bottom: 40px;
+}
+
+.newsletter button:hover {
+  background-color: #ffe033;
+}
+
+@media screen and (max-width: 480px) {
+  .badge-icons {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .badge-icons img {
+    width: 100px;
+    height: 100px;
+  }
+
+  .badge-icons .badge:nth-child(2) img {
+    width: 80px;
+    height: 80px;
+    margin-top: 10px;
+  }
+
+  .newsletter {
+    left: 10%;
+    width: 50%;
+    transform: translate(0, -50%);
+  }
 }

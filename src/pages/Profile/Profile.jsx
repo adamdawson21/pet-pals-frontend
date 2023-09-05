@@ -3,6 +3,10 @@ import './Profile.css';
 import { getUsers } from '../../services/users';
 import { deleteLikedPost } from '../../services/dogs';
 import { getPosts } from '../../services/cats';
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
+
 
 const UserProfile = ({ user }) => {
   const [favorites, setFavorites] = useState([]);
@@ -30,7 +34,7 @@ const UserProfile = ({ user }) => {
   };
 
   const getLoggedUser = (id) => {
-    const loggedUser = users.filter((userObj) => userObj.id === id);
+    const loggedUser = users.filter((userObj) => userObj.id == id);
     setLoggedUser(loggedUser);
     // Update the favorites state with the loggedUser
     setLikes(loggedUser[0]?.likes);
@@ -59,29 +63,53 @@ const UserProfile = ({ user }) => {
 
   const handleDelete = async (id) => {
     try {
-      const likeToDelete = likes.find((like) => like.post === id);
 
+      const likeToDelete = likes.find((like) => like.post === id);
+  
       if (likeToDelete) {
         // Delete the liked post on the server using its id
         await deleteLikedPost(likeToDelete.id);
-
+  
         // Remove the liked post from the likes state
         const updatedLikes = likes.filter(
           (like) => like.id !== likeToDelete.id
         );
         setLikes(updatedLikes);
+        
+        // Remove the liked post from the favorites state
+        const updatedFavorites = favorites.filter(
+          (favorite) => favorite.id !== likeToDelete.post
+        );
+        setFavorites(updatedFavorites);
       }
+
+      toast.error("Delete from favorites", {
+        position: "top-center",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+        closeButton: false,
+      });
     } catch (error) {
       console.error('Error deleting liked post:', error);
     }
   };
+  
 
   return (
     <div className='user-profile'>
+      <ToastContainer />
       <h1>Welcome, {user?.username}!</h1>
       <div className='user-favorites'>
         <h1>Favorite Pals</h1>
         <div className='favorite-images'>
+        {!favorites?.length && (
+        <p className="no-favorites-message">(no Favorites yet)</p>
+      )}
           {favorites?.map((favorite, index) => (
             <div className='favorite-image' key={index}>
               <img src={favorite.image} alt={favorite.name} />

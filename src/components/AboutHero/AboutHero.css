@@ -1,8 +1,8 @@
-.container {
+.hero-container {
   align-items: center;
   justify-content: center;
-  margin-top: 5rem;
   position: relative;
+  margin-top: 80px;
 }
 
 .aboutus-image {

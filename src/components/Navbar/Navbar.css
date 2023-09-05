@@ -15,7 +15,8 @@
 }
 
 .header a:hover {
-  color: #ffe033;;
+  color: #ffe033;
+  ;
 }
 
 .nav-list {
@@ -97,4 +98,22 @@ nav ul li a {
   margin-left: 3px;
   height: 50px;
   width: 50px;
+}
+
+@media screen and (max-width: 480px) {
+  .nav-container {
+    width: 100vw;
+  }
+
+  .header {
+    font-size: 0;
+  }
+
+  .logo-image {
+    display: block;
+  }
+
+  .nav-list li {
+    margin: 0;
+  }
 }

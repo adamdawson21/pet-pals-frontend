@@ -47,7 +47,7 @@
   left: 100px;
   bottom: -40px;
   transform: translateX(-50%);
-  background-color: #040404;
+  background-color: #471aa0;
   color: white;
   border: none;
   border-radius: 4px;
@@ -58,7 +58,8 @@
 }
 
 .favorite-image button:hover {
-  background-color: #d32f2f;
+  background-color: #ffe033;
+  color: #471aa0;
 }
 
 .user-avatar img {
@@ -95,5 +96,12 @@
   color: #0d0d0d;
 }
 
+.no-favorites-message{
+  font-family: "Amatic SC";
+  color: #471AA0;
+  font-size: 30px;
+  margin: 60px 0 70px 0;
+  letter-spacing: 1px;
+}
 
 /* Additional styling can be added for other elements */

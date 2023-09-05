@@ -4,7 +4,7 @@
   align-items: center;
   justify-content: center;
   width: 80%;
-  margin: 6rem ;
+  margin: 6rem;
   gap: 2rem;
 }
 
@@ -30,8 +30,31 @@ span {
   font-weight: bold;
 }
 
-.pet-bio-div-img{
+.pet-bio-div-img {
   max-height: 500px;
   max-width: 500px;
   object-fit: cover;
+}
+
+.button {
+  background-color: #471aa0;
+  height: 50px;
+}
+
+.add-button {
+  width: 200px;
+}
+
+@media screen and (max-width: 480px) {
+  .pet-bio-container {
+    grid-template-columns: 1fr;
+    margin: 0 auto;
+    margin-top: 100px;
+    width: 80vw;
+  }
+
+  .pet-bio-div-img {
+    margin: 0 auto;
+    max-width: 460px;
+  }
 }

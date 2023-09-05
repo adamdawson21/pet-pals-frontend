@@ -75,15 +75,15 @@ export default function PetBio({ user }) {
         <div className="buttons">
           {pet.animal_type === "Dog" ? (
             <Link to={"/allDogs"}>
-              <Button>Go Back</Button>
+              <button className="button">Go Back</button>
             </Link>
           ) : (
             <Link to={"/allCats"}>
-              <Button>Back</Button>
+              <button className="button">Back</button>
             </Link>
           )}
-          <Button onClick={handleLikeToFav}>Add to Favorites</Button>
-          <Button onClick={emailButton}>Adopt Me!</Button>
+          <button className="button add-button" onClick={handleLikeToFav}>Add to Favorites</button>
+          <button className="button" onClick={emailButton}>Adopt Me!</button>
         </div>
       </div>
       <ToastContainer />

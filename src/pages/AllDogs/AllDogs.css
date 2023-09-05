@@ -13,7 +13,7 @@
   margin-right: 10px;
   font-family: 'Montserrat', sans-serif;
   font-size: larger;
-  color: rgb(24, 47, 92);
+  color: #705c96;
 }
 
 .filter-container #genderFilter {
@@ -31,5 +31,15 @@
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
-  margin-top: 10px;
+  margin: 20px 0;
+  margin-left: 20px;
+}
+
+@media screen and (max-width:480px) {
+  .card-container {
+    flex-direction: column;
+  }
+  .custom-card {
+    width: 100%;
+  }
 }
