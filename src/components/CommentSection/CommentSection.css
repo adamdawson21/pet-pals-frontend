@@ -40,14 +40,12 @@
   font-weight: bold;
   font-size: 25px;
   letter-spacing: 2px;
-  /* color: #0056b3; */
 }
 
 .comment-date {
   font-weight: bold;
   font-size: 25px;
   letter-spacing: 1px;
-  /* color: #000080; */
 }
 
 .comment-hr {
@@ -71,7 +69,6 @@
 }
 
 .comment-section-buttons:hover {
-  /* color: #FFFFFF; */
   background-color: #ffe033;
   border: solid #ffe033;
 }
@@ -140,6 +137,34 @@
 
 @media screen and (max-width: 480px) {
   .comment-section-container {
-    margin: 0 60px;
+    margin: 0;
+  }
+
+  .comment-section-buttons {
+    width: 80%;
+    height: 50px;
+  }
+
+  .comment-text {
+    max-width: 80%;
+  }
+
+  .comment-edit-button {
+    margin-top: 50px;
+    font-size: 20px;
+  }
+
+  .comment-add-button {
+    font-size: 20px;
+    width: 77%;
+    margin-right: 6px;
+  }
+
+  .comment-text {
+    font-size: 25px;
+  }
+
+  .comment-header * {
+    font-size: 35px;
   }
 }
