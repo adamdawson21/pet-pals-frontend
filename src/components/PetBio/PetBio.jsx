@@ -75,7 +75,7 @@ export default function PetBio({ user }) {
         <div className="buttons">
           {pet.animal_type === "Dog" ? (
             <Link to={"/allDogs"}>
-              <Button>Go Back</Button>
+              <button className="button">Go Back</button>
             </Link>
           ) : (
             <Link to={"/allCats"}>
