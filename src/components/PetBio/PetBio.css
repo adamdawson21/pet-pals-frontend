@@ -52,4 +52,8 @@ span {
     margin-top: 100px;
     width: 80vw;
   }
+
+  .pet-bio-div-img {
+    margin: 0 auto;
+  }
 }
