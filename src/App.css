@@ -1,0 +1,10 @@
+@import './fonts.css';
+
+.App {
+  display: flex;
+  flex-direction: column;
+}
+
+.App > Routes {
+  flex: 1;
+}

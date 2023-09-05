@@ -1,0 +1,84 @@
+.Footer {
+  display: flex;
+  background-color: #471aa0;
+  padding: 20px;
+  width: 100%;
+  min-height: 350px;
+  position: relative;
+}
+
+.social-icons {
+  display: flex;
+  gap: 15px;
+  position: absolute;
+  bottom: 10px;
+  left: 20px;
+}
+
+.social-icons a {
+  color: #fcf9f9;
+  transition: color 0.2s;
+  font-size: 24px;
+}
+
+.social-icons a:hover {
+  color: #b559d3;
+}
+
+.footer-text {
+  color: white;
+  position: absolute;
+  bottom: 10px;
+  left: 200px;
+}
+
+.badge-icons {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  position: absolute;
+  right: 15%;
+  top: 50%;
+  transform: translate(50%, -50%);
+}
+
+.badge-icons img {
+  width: 180px;
+  height: 180px;
+}
+
+.badge-icons .badge:nth-child(2) img {
+  width: 110px;
+  height: 110px;
+  margin-top: 35px;
+}
+
+.newsletter {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  position: absolute;
+  left: 15%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.newsletter h3 {
+  color: white;
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.newsletter input[type='email'] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.newsletter button[type='submit'] {
+  background-color: #070707;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+}

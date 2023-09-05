@@ -1,0 +1,25 @@
+.container {
+  align-items: center;
+  justify-content: center;
+  margin-top: 5rem;
+  position: relative;
+}
+
+.aboutus-image {
+  width: 100vw;
+  height: 50vh;
+  object-position: contain;
+  object-fit: cover;
+}
+
+.overlay {
+  position: absolute;
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  height: 50vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+}

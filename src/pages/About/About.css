@@ -1,0 +1,25 @@
+.about {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.about-text {
+  padding: 20px;
+  margin: 2rem 10rem;
+  text-align: center;
+  font-size: 1.25rem;
+  color: #000;
+  line-height: 1.5;
+  font-family: 'Montserrat', sans-serif;
+  text-align: center;
+  text-decoration: none;
+}
+.h1 {
+  font-size: 3rem;
+  text-align: center;
+  text-decoration: none;
+  font-family: 'Amatic SC', cursive;
+  color: navy;
+}

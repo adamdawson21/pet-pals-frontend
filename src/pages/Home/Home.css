@@ -1,0 +1,23 @@
+.parent {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.div1 {
+  flex: 1;
+}
+
+.div2,
+.div3 {
+  flex: 1;
+  display: flex;
+}
+
+.div2 {
+  flex-direction: row;
+}
+
+.div3 {
+  flex-direction: row;
+}
