@@ -118,7 +118,6 @@ export default function CommentSection({ comments, postId, user, setToggle }) {
 
   const handleSubmitAdd = async (e) => {
     e.preventDefault();
-    console.log("new comment at submitAdd: ", newComment);
     await addComment(newComment);
 
     setNewComment({
